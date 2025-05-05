@@ -169,6 +169,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->date_edit;
     }
 
+    #[ORM\PreUpdate]
+    public function updateDateEdit(): void
+    {
+        $this->date_edit = new \DateTime();
+    }
+
+
     public function setDateEdit(\DateTimeInterface $date_edit): static
     {
         $this->date_edit = $date_edit;
