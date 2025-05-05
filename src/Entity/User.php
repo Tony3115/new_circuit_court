@@ -159,7 +159,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function setDateCreate(\DateTimeInterface $date_create): static
     {
-        $this->date_create = $date_create;
+        if ($this->date_create === null) { // Ne définit la date que si elle est vide
+            $this->date_create = $date_create;
+        }
 
         return $this;
     }
