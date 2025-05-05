@@ -26,7 +26,7 @@ class AppFixtures extends Fixture
         $user->setImage('/');
         $encoded = $this->encoder->hashPassword($user, '123');
         $user->setPassword($encoded);
-        $user->setRoles(['ROLE_ADMIN']);
+        $user->setRoles(['ROLE_USER']);
 
         $manager->persist($user);
 
