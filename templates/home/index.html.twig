@@ -10,5 +10,22 @@
 
 <div class="example-wrapper">
     <h1>Bonjour {{ controller_name }}! ✅</h1>
+
+    {% if is_granted('ROLE_USER')%}
+    <h2>vous êtes client</h2>
+    {% endif %}
+
+    {% if is_granted('ROLE_ADMIN')%}
+    <h2>vous êtes admin</h2>
+    {% endif %}
+
+    {% if is_granted('ROLE_PROSPECT')%}
+    <h2>vous êtes prospect</h2>
+    {% endif %}
+
+    {% if is_granted('ROLE_MARAICHER')%}
+    <h2>vous êtes maraicher</h2>
+    {% endif %}
+
 </div>
 {% endblock %}

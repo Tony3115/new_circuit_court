@@ -19,7 +19,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180, unique: true)]
     private ?string $email = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: 'json', nullable: false)]
     private array $roles = [];
 
     /**
@@ -37,7 +37,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 20)]
     private ?string $phone = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, updatable: false)]
     private ?\DateTimeInterface $date_create = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
@@ -152,14 +152,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    public function __construct()
+    {
+        $this->date_create = new \DateTime(); // Prend la date actuelle
+        $this->date_edit = $this->date_create; // Initialisation identique
+    }
+
+
     public function getDateCreate(): ?\DateTimeInterface
     {
         return $this->date_create;
     }
 
-    public function setDateCreate(\DateTimeInterface $date_create): static
+    public function setDateCreate(?\DateTimeInterface $date_create): static
     {
-        if ($this->date_create === null) { // Ne définit la date que si elle est vide
+        if ($date_create !== null && $this->date_create === null) {
             $this->date_create = $date_create;
         }
 
