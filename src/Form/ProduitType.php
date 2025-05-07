@@ -19,8 +19,8 @@ class ProduitType extends AbstractType
             ->add('description')
             ->add('prix')
             ->add('image')
-            ->add('date_create')
-            ->add('date_edit')
+            //->add('date_create')
+            //->add('date_edit')
             ->add(
                 'category',
                 EntityType::class,
@@ -31,7 +31,7 @@ class ProduitType extends AbstractType
                     'label' => 'Catégorie',
                 ]
             )
-            ->add('save', SubmitType::class);;
+            ->add('save', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

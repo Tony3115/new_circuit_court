@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Produit;
 use App\Form\ProduitType;
+use App\Repository\ProduitRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,10 +14,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProduitController extends AbstractController
 {
     #[Route('/produit', name: 'app_produit')]
-    public function index(): Response
+    public function index(Request $request, EntityManagerInterface $em, ProduitRepository $pr): Response
     {
+        //Chercher le produit en bdd
+        $produits = $pr->findAll();
+
         return $this->render('produit/index.html.twig', [
-            'controller_name' => 'ProduitController',
+            'produits' => $produits,
         ]);
     }
 
