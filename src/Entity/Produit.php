@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProduitRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Produit
 {
     #[ORM\Id]
@@ -32,9 +33,21 @@ class Produit
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date_edit = null;
 
+    #[ORM\PreUpdate]
+    public function updateEditDate(): void
+    {
+        $this->date_edit = new \DateTime();
+    }
+
     #[ORM\ManyToOne(inversedBy: 'produits')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
+
+    #[ORM\PrePersist]
+    public function setCreationDate(): void
+    {
+        $this->date_create = new \DateTime();
+    }
 
     public function getId(): ?int
     {
