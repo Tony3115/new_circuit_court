@@ -37,6 +37,9 @@ class ProduitController extends AbstractController
             $em->persist($produit);
             $em->flush();
 
+            //ajout de flash message 
+            $this->addFlash('success', 'Produit créé avec succès');
+
             return $this->redirectToRoute('app_produit');
         }
 
