@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CategoryRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Category
 {
     #[ORM\Id]
@@ -31,8 +32,20 @@ class Category
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date_edit = null;
 
+    #[ORM\PreUpdate]
+    public function updateEditDate(): void
+    {
+        $this->date_edit = new \DateTime();
+    }
+
     #[ORM\OneToMany(targetEntity: Produit::class, mappedBy: 'category')]
     private Collection $produits;
+
+    #[ORM\PrePersist]
+    public function setCreationDate(): void
+    {
+        $this->date_create = new \DateTime();
+    }
 
     public function __construct()
     {

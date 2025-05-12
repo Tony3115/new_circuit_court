@@ -9,6 +9,33 @@
 </style>
 
 <div class="example-wrapper">
-{{ produits }}
+    <table>
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Catégorie</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produit in produits %}
+                <tr>
+                    <td>{{ produit.name }}</td>
+                    <td>{{ produit.description }}</td>
+                    <td>{{ produit.prix }}</td>
+                    <td>{{ produit.category.name }}</td>
+                    <td>
+                        {% if produit.image %}
+                            <img src="{{ asset('uploads/' ~ produit.image) }}" alt="{{ produit.name }}">
+                        {% else %}
+                            <span>Pas d'image disponible</span>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 {% endblock %}

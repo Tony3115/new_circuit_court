@@ -19,7 +19,7 @@ class ProduitType extends AbstractType
             ->add('description')
             ->add('prix')
             ->add('image')
-            //->add('date_create')
+            ->add('date_create')
             //->add('date_edit')
             ->add(
                 'category',
