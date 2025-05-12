@@ -29,6 +29,11 @@ class CategoryController extends AbstractController
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
+        if ($form->isSubmitted() && !$form->isValid()) {
+            // Affiche un message flash si le formulaire contient des erreurs
+            $this->addFlash('error', 'Erreur : le formulaire contient des erreurs.');
+        }
+
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($category);
             $entityManager->flush();
@@ -63,7 +68,7 @@ class CategoryController extends AbstractController
             $entityManager->flush();
 
             //ajout de flash message 
-            $this->addFlash('success', 'Catégorie éditée avec succès');
+            $this->addFlash('success', 'Mise à jour réussi');
 
             return $this->redirectToRoute('app_category_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -82,7 +87,10 @@ class CategoryController extends AbstractController
             $entityManager->flush();
 
             //ajout de flash message 
+
             $this->addFlash('success', 'Catégorie effacée avec succès');
+        } else {
+            $this->addFlash('error', 'Échec de l\'ajout de la catégorie. Veuillez vérifier les informations saisies.');
         }
 
         return $this->redirectToRoute('app_category_index', [], Response::HTTP_SEE_OTHER);
