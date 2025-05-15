@@ -23,7 +23,13 @@
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
                 <td>{{ category.description }}</td>
-                <td>{{ category.image }}</td>
+                                <td>
+                    {% if produit.image is defined and produit.image %}
+                    <img src="{{ produit.image }}" alt="Image du produit" width="100">
+                    {% else %}
+                    <p>Pas d'image disponible</p>
+                    {% endif %}
+                </td>
                 <td>{{ category.dateCreate ? category.dateCreate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ category.dateEdit ? category.dateEdit|date('Y-m-d H:i:s') : '' }}</td>
                 <td>

@@ -33,6 +33,9 @@ class ProduitController extends AbstractController
             $entityManager->persist($produit);
             $entityManager->flush();
 
+            //ajout de flash message 
+            $this->addFlash('success', 'Produit ajoutée avec succès');
+
             return $this->redirectToRoute('app_produit_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -59,6 +62,9 @@ class ProduitController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
+            //ajout de flash message 
+            $this->addFlash('success', 'Mise à jour réussi');
+
             return $this->redirectToRoute('app_produit_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -71,9 +77,12 @@ class ProduitController extends AbstractController
     #[Route('/{id}', name: 'app_produit_delete', methods: ['POST'])]
     public function delete(Request $request, Produit $produit, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$produit->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $produit->getId(), $request->request->get('_token'))) {
             $entityManager->remove($produit);
             $entityManager->flush();
+
+            //ajout de flash message 
+            $this->addFlash('success', 'Produit effacé');
         }
 
         return $this->redirectToRoute('app_produit_index', [], Response::HTTP_SEE_OTHER);

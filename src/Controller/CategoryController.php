@@ -82,8 +82,7 @@ class CategoryController extends AbstractController
             $entityManager->flush();
 
             //ajout de flash message 
-
-            $this->addFlash('success', 'Catégorie effacée avec succès');
+            $this->addFlash('success', 'Catégorie effacée');
         }
 
         return $this->redirectToRoute('app_category_index', [], Response::HTTP_SEE_OTHER);
