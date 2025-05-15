@@ -1,41 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProduitController!{% endblock %}
+{% block title %}Produit index{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <h1>Produit index</h1>
 
-<div class="example-wrapper">
-    <table>
+    <table class="table">
         <thead>
             <tr>
-                <th>Nom</th>
+                <th>Id</th>
+                <th>Name</th>
                 <th>Description</th>
                 <th>Prix</th>
-                <th>Catégorie</th>
                 <th>Image</th>
+                <th>Date_create</th>
+                <th>Date_edit</th>
+                <th>actions</th>
             </tr>
         </thead>
         <tbody>
-            {% for produit in produits %}
-                <tr>
-                    <td>{{ produit.name }}</td>
-                    <td>{{ produit.description }}</td>
-                    <td>{{ produit.prix }}</td>
-                    <td>{{ produit.category.name }}</td>
-                    <td>
-                        {% if produit.image %}
-                            <img src="{{ asset('uploads/' ~ produit.image) }}" alt="{{ produit.name }}">
-                        {% else %}
-                            <span>Pas d'image disponible</span>
-                        {% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.name }}</td>
+                <td>{{ produit.description }}</td>
+                <td>{{ produit.prix }}</td>
+                <td>
+                    {% if produit.image is defined and produit.image %}
+                    <img src="{{ produit.image }}" alt="Image du produit" width="100">
+                    {% else %}
+                    <p>Pas d'image disponible</p>
+                    {% endif %}
+                </td>
+
+                <td>{{ produit.dateCreate ? produit.dateCreate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ produit.dateEdit ? produit.dateEdit|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_produit_show', {'id': produit.id}) }}">show</a>
+                    <a href="{{ path('app_produit_edit', {'id': produit.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
         </tbody>
     </table>
-</div>
+
+    <a href="{{ path('app_produit_new') }}">Create new</a>
 {% endblock %}
