@@ -30,7 +30,7 @@ class ProduitController extends AbstractController
         $form = $this->createForm(Produit1Type::class, $produit);
         $form->handleRequest($request);
 
-        $path = $this->getParameter('app.dir.public') . '/uploads/';
+        $path = $this->getParameter('images_directory');
 
 
         if ($form->isSubmitted() && $form->isValid()) {

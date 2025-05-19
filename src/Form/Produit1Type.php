@@ -31,13 +31,13 @@ class Produit1Type extends AbstractType
                     ],
                     'constraints' => [
                         new File([
-                            'maxSize' => '200K',
+                            'maxSize' => '400K',
                             'mimeTypes' => [
                                 'image/jpeg',
                                 'image/png'
                             ],
                             'mimeTypesMessage' => 'Merci de charger un fichier jpg ou png',
-                            'uploadFormSizeErrorMessage' => 'La taille max autorisée est de 200K'
+                            'uploadFormSizeErrorMessage' => 'La taille max autorisée est de 400K'
 
                         ])
                     ]
