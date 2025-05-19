@@ -2,12 +2,14 @@
 
 namespace App\Form;
 
-use App\Entity\Category;
 use App\Entity\Produit;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class Produit1Type extends AbstractType
 {
@@ -17,8 +19,30 @@ class Produit1Type extends AbstractType
             ->add('name')
             ->add('description')
             ->add('prix')
-            ->add('image')
-            //->add('date_edit')
+            ->add(
+                'image',
+                FileType::class,
+                [
+                    'required' => false,
+                    'mapped' => false,
+                    'label' => "Image Produit",
+                    'attr' => [
+                        'placeholder' => 'Placeholder Image Produit'
+                    ],
+                    'constraints' => [
+                        new File([
+                            'maxSize' => '200K',
+                            'mimeTypes' => [
+                                'image/jpeg',
+                                'image/png'
+                            ],
+                            'mimeTypesMessage' => 'Merci de charger un fichier jpg ou png',
+                            'uploadFormSizeErrorMessage' => 'La taille max autorisée est de 200K'
+
+                        ])
+                    ]
+                ]
+            )
             ->add('category', EntityType::class, [
                 'class' => Category::class,
                 'choice_label' => 'name',
