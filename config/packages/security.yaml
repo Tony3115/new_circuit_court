@@ -44,7 +44,6 @@ security:
     - { path: ^/admin, roles: ROLE_ADMIN }
     - { path: ^/user, roles: ROLE_ADMIN }
     - { path: ^/category, roles: [ROLE_MARAICHER, ROLE_PROSPECT] }
-    - { path: ^/produit, roles: [ROLE_USER, IS_AUTHENTICATED_ANONYMOUS] }
 
 when@test:
   security:
