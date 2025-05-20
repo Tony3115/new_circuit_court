@@ -27,7 +27,7 @@
                 <td>{{ produit.prix }}</td>
                 <td>
                     {% if produit.image is defined and produit.image %}
-                    <img src="{{ 'uploads/' ~ produit.image }}" alt="{{ produit.name }}">
+                    <img src="{{ produit.image }}" alt="{{ produit.name }}">
                   
                     {% else %}
                     <p>Pas d'image disponible</p>

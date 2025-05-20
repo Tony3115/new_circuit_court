@@ -6,13 +6,29 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Accueil</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link active" aria-current="page" href="/produit">Produit</a>
         </li>
-        <li class="nav-item dropdown">
+
+        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_PROSPECT') or is_granted('ROLE_MARAICHER') %}
+        <li class="nav-item">
+          <a class="nav-link" href="/category">Catégorie</a>
+        </li>
+        {% endif %}
+
+       {% if is_granted('ROLE_ADMIN') %}
+          <li class="nav-item">
+          <a class="nav-link" href="/user">Utilisateur</a>
+        </li>
+          
+        {% endif %}
+
+        {# <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
@@ -25,12 +41,16 @@
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+        </li> #}
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+       {% if not app.user %}
+     <a href="/login">Se connecter</a>
+     {% else %}
+     {{ app.user.prenom }}
+     &nbsp;<a href ="{{ path('app_logout')}}">Se Déconnecter</a>
+     {% endif %}
+
     </div>
   </div>
 </nav>
