@@ -81,10 +81,27 @@ class CategoryController extends AbstractController
         if (!$this->isGranted('ROLE_ADMIN') && !$this->isGranted('ROLE_MARAICHER')) {
             throw $this->createAccessDeniedException('Accès refusé');
         }
+
+        $path = $this->getParameter('app.dir.public') . 'uploads/';
+
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form->get('image')->getData();
+
+            if ($file) {
+                $newFileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '-' . uniqid() . '.' . $file->guessExtension();
+
+                try {
+                    $file->move($path, $newFileName);
+                    $category->setImage('uploads/' . $newFileName);
+                } catch (FileException $e) {
+                    echo $e->getMessage();
+                }
+            }
+
             $entityManager->flush();
 
             //ajout de flash message 
