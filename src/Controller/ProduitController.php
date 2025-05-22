@@ -26,7 +26,7 @@ class ProduitController extends AbstractController
     #[Route('/new', name: 'app_produit_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
-        if (!$this->isGranted('ROLE_PROSPECT') && !$this->isGranted('ROLE_ADMIN') && !$this->isGranted('ROLE_MARAICHER')) {
+        if (!$this->isGranted('ROLE_ADMIN') && !$this->isGranted('ROLE_MARAICHER')) {
             throw $this->createAccessDeniedException('Accès refusé');
         }
 
@@ -81,7 +81,7 @@ class ProduitController extends AbstractController
     #[Route('/{id}/edit', name: 'app_produit_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Produit $produit, EntityManagerInterface $entityManager): Response
     {
-        if (!$this->isGranted('ROLE_PROSPECT') && !$this->isGranted('ROLE_ADMIN') && !$this->isGranted('ROLE_MARAICHER')) {
+        if (!$this->isGranted('ROLE_ADMIN') && !$this->isGranted('ROLE_MARAICHER')) {
             throw $this->createAccessDeniedException('Accès refusé');
         }
         $form = $this->createForm(Produit1Type::class, $produit);
