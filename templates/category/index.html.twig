@@ -23,9 +23,9 @@
                 <td>{{ category.id }}</td>
                 <td>{{ category.name }}</td>
                 <td>{{ category.description }}</td>
-                                <td>
-                    {% if produit.image is defined and produit.image %}
-                    <img src="{{ produit.image }}" alt="Image du produit" width="100">
+                  <td>
+                    {% if category.image is defined and category.image %}
+                    <img src= "{{ base_url ~ category.image }}" alt="{{ category.name }}">
                     {% else %}
                     <p>Pas d'image disponible</p>
                     {% endif %}

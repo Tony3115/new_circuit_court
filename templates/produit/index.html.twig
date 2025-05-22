@@ -26,8 +26,6 @@
                 <td>{{ produit.description }}</td>
                 <td>{{ produit.prix }}</td>
                 <td>
-
-
                     {% if produit.image is defined and produit.image %}
                     <img src= "{{ base_url ~ produit.image }}" alt="{{ produit.name }}">
                     {% else %}

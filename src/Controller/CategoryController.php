@@ -6,10 +6,11 @@ use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 #[Route('/category')]
 class CategoryController extends AbstractController
@@ -32,7 +33,25 @@ class CategoryController extends AbstractController
         $form = $this->createForm(CategoryType::class, $category);
         $form->handleRequest($request);
 
+        $path = $this->getParameter('app.dir.public') . 'uploads/';
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form['image']->getData();
+
+            if ($file) {
+                $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+
+                $newName = 'uploads/' . $originalName . '-' . uniqid() . '-' . $file->guessExtension();
+
+                $category->setImage($newName);
+
+                try {
+                    $file->move($path, $newName);
+                } catch (FileException $e) {
+                    echo $e->getMessage();
+                }
+            }
             $entityManager->persist($category);
             $entityManager->flush();
 
