@@ -25,7 +25,11 @@ class ProduitController extends AbstractController
 
     #[Route('/new', name: 'app_produit_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
-    {
+    { {   // Vérification des droits d’accès
+            if (!$this->isGranted('ROLE_PROSPECT')) {
+                throw $this->createAccessDeniedException('Accès refusé');
+            }
+        }
         $produit = new Produit();
         $form = $this->createForm(Produit1Type::class, $produit);
         $form->handleRequest($request);
