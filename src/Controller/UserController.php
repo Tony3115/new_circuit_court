@@ -81,6 +81,9 @@ class UserController extends AbstractController
     #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, User $user, EntityManagerInterface $entityManager): Response
     {
+
+        $path = $this->getParameter('app.dir.public') . 'uploads/';
+
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
@@ -92,6 +95,19 @@ class UserController extends AbstractController
                 $roles = $params['user']['roles'];
 
                 $user->setRoles([$roles]);
+            }
+
+            $file = $form->get('image')->getData();
+
+            if ($file) {
+                $newFileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '-' . uniqid() . '.' . $file->guessExtension();
+
+                try {
+                    $file->move($path, $newFileName);
+                    $user->setImage('uploads/' . $newFileName);
+                } catch (FileException $e) {
+                    echo $e->getMessage();
+                }
             }
 
             $entityManager->persist($user);
