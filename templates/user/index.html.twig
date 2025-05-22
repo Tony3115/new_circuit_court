@@ -33,7 +33,13 @@
                 <td>{{ user.phone }}</td>
                 <td>{{ user.dateCreate ? user.dateCreate|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ user.dateEdit ? user.dateEdit|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ user.image }}</td>
+                <td>
+                    {% if user.image is defined and user.image %}
+                    <img src= "{{ base_url ~ user.image }}" alt="{{ user.prenom }}">
+                    {% else %}
+                    <p>Pas d'image disponible</p>
+                    {% endif %}
+                </td>
                 <td>
                     <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
                     <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
