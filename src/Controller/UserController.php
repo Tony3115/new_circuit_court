@@ -42,6 +42,14 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $params = $request->request->all();
+            // dd($params);
+            if (isset($params['user']) && isset($params['user']['roles'])) {
+                $roles = $params['user']['roles'];
+
+                $user->setRoles([$roles]);
+            }
+
             $file = $form['image']->getData();
 
             if ($file) {
