@@ -84,10 +84,26 @@ class ProduitController extends AbstractController
         if (!$this->isGranted('ROLE_ADMIN') && !$this->isGranted('ROLE_MARAICHER')) {
             throw $this->createAccessDeniedException('Accès refusé');
         }
+
+        $path = $this->getParameter('app.dir.public') . 'uploads/';
+
         $form = $this->createForm(Produit1Type::class, $produit);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form->get('image')->getData();
+
+            if ($file) {
+                $newFileName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '-' . uniqid() . '.' . $file->guessExtension();
+
+                try {
+                    $file->move($path, $newFileName);
+                    $produit->setImage('uploads/' . $newFileName);
+                } catch (FileException $e) {
+                    echo $e->getMessage();
+                }
+            }
             $entityManager->flush();
 
             //ajout de flash message 
