@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use PHPMailer\PHPMailer\PHPMailer;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
@@ -22,5 +23,36 @@ class HomeController extends AbstractController
         return $this->render('home/contact.html.twig', [
             'controller_name' => 'Controller de page Contact',
         ]);
+    }
+
+    #[Route('/phpmail', name: 'app_phpmail')]
+    public function phpmail(): Response
+    {
+        //configuration
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'whisker.o2switch.net';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'sato4773';                     //SMTP username
+        $mail->Password   = "ny5F-wwhJ-vGL!";                               //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 465;
+
+        //envoi du mail
+        $mail->setFrom('circuit_court@gmail.com', 'Mailer');
+        $mail->addAddress('pelicarpa@hotmail.fr', 'Joe User');
+
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = 'Test avec PHPMails';
+        $mail->Body    = 'Message recu';
+
+        $mail->send();
+
+        return $this->render(
+            'home/email.html.twig',
+            [
+                'controller_name' => 'envoi réussi',
+            ],
+        );
     }
 }
