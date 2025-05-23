@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\MessageGenerator;
 use PHPMailer\PHPMailer\PHPMailer;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -52,6 +53,20 @@ class HomeController extends AbstractController
             'home/email.html.twig',
             [
                 'controller_name' => 'envoi réussi',
+            ],
+        );
+    }
+
+    #[Route('/service', name: 'app_service')]
+    public function service(MessageGenerator $msg): Response
+    {
+        // Simulation 
+        $success = (bool) random_int(0, 1);
+
+        return $this->render(
+            'home/email.html.twig',
+            [
+                'controller_name' => $msg->getMessage($success),
             ],
         );
     }
