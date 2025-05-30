@@ -27,6 +27,7 @@ class UserType extends AbstractType
                 'help' => 'Sélectionner un rôle',
                 'multiple' => false,
                 'mapped' => false,
+                'data' => $options['data']->getRoles()[0] ?? 'ROLE_USER',
             ])
             ->add('password')
             ->add('nom')

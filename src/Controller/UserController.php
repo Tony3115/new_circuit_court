@@ -65,7 +65,7 @@ class UserController extends AbstractController
                     echo $e->getMessage();
                 }
             }
-
+            $user->setRoles([$form->get('roles')->getData()]);
             $entityManager->persist($user);
             $entityManager->flush();
 
