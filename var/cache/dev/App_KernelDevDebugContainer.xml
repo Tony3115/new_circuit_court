@@ -424,6 +424,9 @@
       <argument type="service" id="router.default"/>
     </service>
     <service id="App\Service\MessageGenerator" class="App\Service\MessageGenerator" autowire="true" autoconfigure="true"/>
+    <service id="App\Service\PHPMailService" class="App\Service\PHPMailService" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;App\Service\PHPMailService&quot; to be defined in file &quot;C:\laragon\www\new_circuit_court\vendor\composer/../../src\Service\PHPMailService.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
       <tag priority="100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">controller.argument_value_resolver</tag>

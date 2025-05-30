@@ -47,12 +47,11 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
         // line 1
         yield "<nav class=\"navbar navbar-expand-lg bg-body-tertiary\">
  <div class=\"container-fluid\">
-    <a class=\"navbar-brand\" href=\"#\">Navbar</a>
     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
       <span class=\"navbar-toggler-icon\"></span>
     </button>
     <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+      <ul class=\"navbar-nav mb-2 mb-lg-0 d-flex w-100 justify-content-around\">
 
         <li class=\"nav-item\">
           <a class=\"nav-link active\" aria-current=\"page\" href=\"/\">Accueil</a>
@@ -63,51 +62,55 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
         </li>
 
         ";
-        // line 18
+        // line 17
         if ((($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN") || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_PROSPECT")) || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MARAICHER"))) {
-            // line 19
+            // line 18
             yield "        <li class=\"nav-item\">
           <a class=\"nav-link\" href=\"/category\">Catégorie</a>
         </li>
         ";
         }
-        // line 23
+        // line 22
         yield "
        ";
-        // line 24
+        // line 23
         if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 25
+            // line 24
             yield "          <li class=\"nav-item\">
           <a class=\"nav-link\" href=\"/user\">Utilisateur</a>
         </li>
           
         ";
         }
-        // line 30
+        // line 29
         yield "
         ";
-        // line 45
+        // line 44
         yield "      </ul>
 
        ";
-        // line 47
-        if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "user", [], "any", false, false, false, 47)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 48
+        // line 46
+        if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 46, $this->source); })()), "user", [], "any", false, false, false, 46)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 47
             yield "     <a href=\"/login\">Se connecter</a>
      ";
         } else {
-            // line 50
-            yield "     ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "user", [], "any", false, false, false, 50), "prenom", [], "any", false, false, false, 50), "html", null, true);
-            yield "
-     &nbsp;<a href =\"";
+            // line 49
+            yield "     <div style=\"display: flex; flex-direction: column; align-items: stretch;\">
+     <i class=\"bi bi-person-circle\"></i>
+     <span>";
             // line 51
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 51, $this->source); })()), "user", [], "any", false, false, false, 51), "prenom", [], "any", false, false, false, 51), "html", null, true);
+            yield "</span>
+     <a href =\"";
+            // line 52
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            yield "\">Se Déconnecter</a>
+            yield "\" style=\"white-space: nowrap;\">Se Déconnecter</a>
+    
      ";
         }
-        // line 53
-        yield "
+        // line 55
+        yield "</div>
     </div>
   </div>
 </nav>";
@@ -141,19 +144,18 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  110 => 53,  105 => 51,  100 => 50,  96 => 48,  94 => 47,  90 => 45,  87 => 30,  80 => 25,  78 => 24,  75 => 23,  69 => 19,  67 => 18,  48 => 1,);
+        return array (  113 => 55,  107 => 52,  103 => 51,  99 => 49,  95 => 47,  93 => 46,  89 => 44,  86 => 29,  79 => 24,  77 => 23,  74 => 22,  68 => 18,  66 => 17,  48 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("<nav class=\"navbar navbar-expand-lg bg-body-tertiary\">
  <div class=\"container-fluid\">
-    <a class=\"navbar-brand\" href=\"#\">Navbar</a>
     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
       <span class=\"navbar-toggler-icon\"></span>
     </button>
     <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-      <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+      <ul class=\"navbar-nav mb-2 mb-lg-0 d-flex w-100 justify-content-around\">
 
         <li class=\"nav-item\">
           <a class=\"nav-link active\" aria-current=\"page\" href=\"/\">Accueil</a>
@@ -195,10 +197,13 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
        {% if not app.user %}
      <a href=\"/login\">Se connecter</a>
      {% else %}
-     {{ app.user.prenom }}
-     &nbsp;<a href =\"{{ path('app_logout')}}\">Se Déconnecter</a>
+     <div style=\"display: flex; flex-direction: column; align-items: stretch;\">
+     <i class=\"bi bi-person-circle\"></i>
+     <span>{{ app.user.prenom }}</span>
+     <a href =\"{{ path('app_logout')}}\" style=\"white-space: nowrap;\">Se Déconnecter</a>
+    
      {% endif %}
-
+</div>
     </div>
   </div>
 </nav>", "nav.html.twig", "C:\\laragon\\www\\new_circuit_court\\templates\\nav.html.twig");

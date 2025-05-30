@@ -58,37 +58,38 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         yield from $this->unwrap()->yieldBlock('title', $context, $blocks);
         yield "</title>
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT\" crossorigin=\"anonymous\">
+        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         ";
-        // line 8
+        // line 9
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 11
+        // line 12
         yield "
         ";
-        // line 12
+        // line 13
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 16
         yield "    </head>
     <body>
     ";
-        // line 17
+        // line 18
         yield Twig\Extension\CoreExtension::include($this->env, $context, "nav.html.twig");
         yield "
     ";
-        // line 18
-        $context["base_url"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "request", [], "any", false, false, false, 18), "getSchemeAndHttpHost", [], "method", false, false, false, 18);
         // line 19
+        $context["base_url"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "request", [], "any", false, false, false, 19), "getSchemeAndHttpHost", [], "method", false, false, false, 19);
+        // line 20
         yield "
 
 ";
-        // line 21
+        // line 22
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "flashes", ["success"], "method", false, false, false, 21));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 22, $this->source); })()), "flashes", ["success"], "method", false, false, false, 22));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 22
+            // line 23
             yield "<div class=\"alert alert-success\">
 ";
-            // line 23
+            // line 24
             yield $context["message"];
             yield "
 </div>
@@ -97,13 +98,13 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 27
         yield "
         <div class=\"container\">
         ";
-        // line 28
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 29
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 30
         yield "        </div>
     </body>
 </html>
@@ -146,7 +147,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         yield from [];
     }
 
-    // line 8
+    // line 9
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -159,7 +160,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
+        // line 10
         yield "            <link rel=\"stylesheet\" href=\"";
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("styles/app.css"), "html", null, true);
         yield "\">
@@ -173,7 +174,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         yield from [];
     }
 
-    // line 12
+    // line 13
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -186,7 +187,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
+        // line 14
         yield "            ";
         yield $this->env->getRuntime('Symfony\Bridge\Twig\Extension\ImportMapRuntime')->importmap();
         yield "
@@ -200,7 +201,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         yield from [];
     }
 
-    // line 28
+    // line 29
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -243,7 +244,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  204 => 28,  190 => 13,  177 => 12,  163 => 9,  150 => 8,  127 => 5,  107 => 29,  105 => 28,  101 => 26,  92 => 23,  89 => 22,  85 => 21,  81 => 19,  79 => 18,  75 => 17,  71 => 15,  69 => 12,  66 => 11,  64 => 8,  58 => 5,  52 => 1,);
+        return array (  205 => 29,  191 => 14,  178 => 13,  164 => 10,  151 => 9,  128 => 5,  108 => 30,  106 => 29,  102 => 27,  93 => 24,  90 => 23,  86 => 22,  82 => 20,  80 => 19,  76 => 18,  72 => 16,  70 => 13,  67 => 12,  65 => 9,  58 => 5,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -254,6 +255,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT\" crossorigin=\"anonymous\">
+        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css\">
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         {% block stylesheets %}
             <link rel=\"stylesheet\" href=\"{{ asset('styles/app.css') }}\">

@@ -103,52 +103,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Bonjour ";
-        // line 12
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        yield "! ✅</h1>
 
-<p>Utilisateur : ";
-        // line 14
-        yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "user", [], "any", false, false, false, 14), "prenom", [], "any", false, false, false, 14), "html", null, true)) : ("Non connecté"));
-        yield "</p>
-
-    ";
-        // line 16
-        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 17
-            yield "    <h2>vous êtes client</h2>
-    ";
-        }
-        // line 19
-        yield "
-    ";
-        // line 20
-        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 21
-            yield "    <h2>vous êtes admin</h2>
-    ";
-        }
-        // line 23
-        yield "
-    ";
-        // line 24
-        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_PROSPECT")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 25
-            yield "    <h2>vous êtes prospect</h2>
-    ";
-        }
-        // line 27
-        yield "
-    ";
-        // line 28
-        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MARAICHER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 29
-            yield "    <h2>vous êtes maraicher</h2>
-    ";
-        }
-        // line 31
-        yield "
 </div>
 ";
         
@@ -181,7 +136,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  151 => 31,  147 => 29,  145 => 28,  142 => 27,  138 => 25,  136 => 24,  133 => 23,  129 => 21,  127 => 20,  124 => 19,  120 => 17,  118 => 16,  113 => 14,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -197,25 +152,6 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Bonjour {{ controller_name }}! ✅</h1>
-
-<p>Utilisateur : {{ app.user ? app.user.prenom : 'Non connecté' }}</p>
-
-    {% if is_granted('ROLE_USER')%}
-    <h2>vous êtes client</h2>
-    {% endif %}
-
-    {% if is_granted('ROLE_ADMIN')%}
-    <h2>vous êtes admin</h2>
-    {% endif %}
-
-    {% if is_granted('ROLE_PROSPECT')%}
-    <h2>vous êtes prospect</h2>
-    {% endif %}
-
-    {% if is_granted('ROLE_MARAICHER')%}
-    <h2>vous êtes maraicher</h2>
-    {% endif %}
 
 </div>
 {% endblock %}
