@@ -74,20 +74,21 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         // line 17
         yield Twig\Extension\CoreExtension::include($this->env, $context, "nav.html.twig");
         yield "
-     ";
+    ";
         // line 18
-        $context["base_url"] = "http://new_circuit_court.test/";
+        $context["base_url"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 18, $this->source); })()), "request", [], "any", false, false, false, 18), "getSchemeAndHttpHost", [], "method", false, false, false, 18);
         // line 19
         yield "
+
 ";
-        // line 20
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "flashes", ["success"], "method", false, false, false, 20));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "flashes", ["success"], "method", false, false, false, 21));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 21
+            // line 22
             yield "<div class=\"alert alert-success\">
 ";
-            // line 22
+            // line 23
             yield $context["message"];
             yield "
 </div>
@@ -96,13 +97,13 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 26
         yield "
         <div class=\"container\">
         ";
-        // line 27
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 28
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 29
         yield "        </div>
     </body>
 </html>
@@ -199,7 +200,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         yield from [];
     }
 
-    // line 27
+    // line 28
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -242,7 +243,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  203 => 27,  189 => 13,  176 => 12,  162 => 9,  149 => 8,  126 => 5,  106 => 28,  104 => 27,  100 => 25,  91 => 22,  88 => 21,  84 => 20,  81 => 19,  79 => 18,  75 => 17,  71 => 15,  69 => 12,  66 => 11,  64 => 8,  58 => 5,  52 => 1,);
+        return array (  204 => 28,  190 => 13,  177 => 12,  163 => 9,  150 => 8,  127 => 5,  107 => 29,  105 => 28,  101 => 26,  92 => 23,  89 => 22,  85 => 21,  81 => 19,  79 => 18,  75 => 17,  71 => 15,  69 => 12,  66 => 11,  64 => 8,  58 => 5,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -264,7 +265,8 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
     </head>
     <body>
     {{include('nav.html.twig')}}
-     {% set base_url = 'http://new_circuit_court.test/' %}
+    {% set base_url = app.request.getSchemeAndHttpHost() %}
+
 
 {% for message in app.flashes('success') %}
 <div class=\"alert alert-success\">

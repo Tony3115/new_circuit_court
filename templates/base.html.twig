@@ -15,7 +15,8 @@
     </head>
     <body>
     {{include('nav.html.twig')}}
-     {% set base_url = 'http://new_circuit_court.test/' %}
+    {% set base_url = app.request.getSchemeAndHttpHost() %}
+
 
 {% for message in app.flashes('success') %}
 <div class="alert alert-success">

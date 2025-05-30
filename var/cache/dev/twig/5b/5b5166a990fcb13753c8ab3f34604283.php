@@ -143,7 +143,9 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
             if ((CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", true, true, false, 29) && CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 29))) {
                 // line 30
                 yield "                    <img width= \"100 px\" src= \"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((isset($context["base_url"]) || array_key_exists("base_url", $context) ? $context["base_url"] : (function () { throw new RuntimeError('Variable "base_url" does not exist.', 30, $this->source); })()) . CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 30)), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "request", [], "any", false, false, false, 30), "getSchemeAndHttpHost", [], "method", false, false, false, 30), "html", null, true);
+                yield "/";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 30), "html", null, true);
                 yield "\" alt=\"";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "name", [], "any", false, false, false, 30), "html", null, true);
                 yield "\">
@@ -228,7 +230,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  198 => 51,  193 => 48,  184 => 44,  182 => 43,  174 => 40,  170 => 39,  165 => 37,  161 => 36,  157 => 34,  153 => 32,  145 => 30,  143 => 29,  138 => 27,  134 => 26,  130 => 25,  126 => 24,  123 => 23,  118 => 22,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  200 => 51,  195 => 48,  186 => 44,  184 => 43,  176 => 40,  172 => 39,  167 => 37,  163 => 36,  159 => 34,  155 => 32,  145 => 30,  143 => 29,  138 => 27,  134 => 26,  130 => 25,  126 => 24,  123 => 23,  118 => 22,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -262,7 +264,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
                 <td>{{ produit.prix }}</td>
                 <td>
                     {% if produit.image is defined and produit.image %}
-                    <img width= \"100 px\" src= \"{{ base_url ~ produit.image }}\" alt=\"{{ produit.name }}\">
+                    <img width= \"100 px\" src= \"{{ app.request.getSchemeAndHttpHost()}}/{{produit.image}}\" alt=\"{{ produit.name }}\">
                     {% else %}
                     <p>Pas d'image disponible</p>
                     {% endif %}

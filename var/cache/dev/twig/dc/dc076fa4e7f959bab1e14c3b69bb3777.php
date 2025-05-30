@@ -138,7 +138,9 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
             if ((CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", true, true, false, 27) && CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 27))) {
                 // line 28
                 yield "                    <img width= \"100px\" src= \"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((isset($context["base_url"]) || array_key_exists("base_url", $context) ? $context["base_url"] : (function () { throw new RuntimeError('Variable "base_url" does not exist.', 28, $this->source); })()) . CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 28)), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "request", [], "any", false, false, false, 28), "getSchemeAndHttpHost", [], "method", false, false, false, 28), "html", null, true);
+                yield "/";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 28), "html", null, true);
                 yield "\" alt=\"";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 28), "html", null, true);
                 yield "\">
@@ -222,7 +224,7 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  192 => 48,  187 => 45,  178 => 41,  176 => 40,  168 => 37,  164 => 36,  159 => 34,  155 => 33,  152 => 32,  148 => 30,  140 => 28,  138 => 27,  133 => 25,  129 => 24,  125 => 23,  122 => 22,  117 => 21,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  194 => 48,  189 => 45,  180 => 41,  178 => 40,  170 => 37,  166 => 36,  161 => 34,  157 => 33,  154 => 32,  150 => 30,  140 => 28,  138 => 27,  133 => 25,  129 => 24,  125 => 23,  122 => 22,  117 => 21,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -254,7 +256,7 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
                 <td>{{ category.description }}</td>
                   <td>
                     {% if category.image is defined and category.image %}
-                    <img width= \"100px\" src= \"{{ base_url ~ category.image }}\" alt=\"{{ category.name }}\">
+                    <img width= \"100px\" src= \"{{ app.request.getSchemeAndHttpHost()}}/{{category.image}}\" alt=\"{{ category.name }}\">
                     {% else %}
                     <p>Pas d'image disponible</p>
                     {% endif %}
