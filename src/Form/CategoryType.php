@@ -31,9 +31,10 @@ class CategoryType extends AbstractType
                             'maxSize' => '400K',
                             'mimeTypes' => [
                                 'image/jpeg',
-                                'image/png'
+                                'image/png',
+                                'image/webp'
                             ],
-                            'mimeTypesMessage' => 'Merci de charger un fichier jpg ou png',
+                            'mimeTypesMessage' => 'Merci de charger un fichier jpg, png ou webp',
                             'uploadFormSizeErrorMessage' => 'La taille max autorisée est de 400K'
 
                         ])
