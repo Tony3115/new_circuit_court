@@ -35,7 +35,7 @@
                 <td>{{ user.dateEdit ? user.dateEdit|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     {% if user.image is defined and user.image %}
-                    <img width= "100px" src= "{{ app.request.getSchemeAndHttpHost()}}/{{user.image}}" alt="{{ user.prenom }}">
+                    <img width= "100px" src= "{{ app.request.getSchemeAndHttpHost()}}{{user.image}}" alt="{{ user.prenom }}">
                     {% else %}
                     <p>Pas d'image disponible</p>
                     {% endif %}
