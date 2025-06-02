@@ -9,6 +9,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0 d-flex w-100 justify-content-around">
 
+       <span class="navbar-brand">Terroir Garonnais</span>
+
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Accueil</a>
         </li>
@@ -21,9 +23,9 @@
           <a class="nav-link active" aria-current="page" href="/propos">À Propos de Nous</a>
         </li>
 
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/panier">Panier</a>
-        </li>
+<li class="nav-item">
+  <a class="btn btn-panier" href="/panier">Panier</a>
+</li>
 
         {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_PROSPECT') or is_granted('ROLE_MARAICHER') %}
         <li class="nav-item">

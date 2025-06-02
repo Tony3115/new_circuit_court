@@ -56,6 +56,8 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
     <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
       <ul class=\"navbar-nav mb-2 mb-lg-0 d-flex w-100 justify-content-around\">
 
+       <span class=\"navbar-brand\">Terroir Garonnais</span>
+
         <li class=\"nav-item\">
           <a class=\"nav-link active\" aria-current=\"page\" href=\"/\">Accueil</a>
         </li>
@@ -68,74 +70,74 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
           <a class=\"nav-link active\" aria-current=\"page\" href=\"/propos\">À Propos de Nous</a>
         </li>
 
-        <li class=\"nav-item\">
-        <a class=\"nav-link active\" aria-current=\"page\" href=\"/panier\">Panier</a>
-        </li>
+<li class=\"nav-item\">
+  <a class=\"btn btn-panier\" href=\"/panier\">Panier</a>
+</li>
 
         ";
-        // line 28
+        // line 30
         if ((($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN") || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_PROSPECT")) || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MARAICHER"))) {
-            // line 29
+            // line 31
             yield "        <li class=\"nav-item\">
           <a class=\"nav-link\" href=\"/category\">Catégorie</a>
         </li>
         ";
         }
-        // line 33
+        // line 35
         yield "
        ";
-        // line 34
+        // line 36
         if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 35
+            // line 37
             yield "          <li class=\"nav-item\">
           <a class=\"nav-link\" href=\"/user\">Utilisateur</a>
         </li>
           
         ";
         }
-        // line 40
+        // line 42
         yield "
         ";
-        // line 55
+        // line 57
         yield "      </ul>
 
        ";
-        // line 57
-        if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 57, $this->source); })()), "user", [], "any", false, false, false, 57)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 58
+        // line 59
+        if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 59, $this->source); })()), "user", [], "any", false, false, false, 59)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 60
             yield "     <a href=\"/login\" style=\"white-space: nowrap;\">Se connecter</a>
 
      ";
         } else {
-            // line 61
+            // line 63
             yield "     
      <div class=\"user-container\">
      <div class=\"user-info\">
       ";
-            // line 64
-            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 64, $this->source); })()), "user", [], "any", false, false, false, 64), "image", [], "any", false, false, false, 64)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-                // line 65
+            // line 66
+            if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 66, $this->source); })()), "user", [], "any", false, false, false, 66), "image", [], "any", false, false, false, 66)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+                // line 67
                 yield "       <img src=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 65, $this->source); })()), "user", [], "any", false, false, false, 65), "image", [], "any", false, false, false, 65), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 67, $this->source); })()), "user", [], "any", false, false, false, 67), "image", [], "any", false, false, false, 67), "html", null, true);
                 yield "\" alt=\"User Image\" class=\"profile-image\">
       ";
             } else {
-                // line 67
+                // line 69
                 yield "      <i class=\"bi bi-person-circle\"></i>
       ";
             }
-            // line 69
+            // line 71
             yield "     <span>";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 69, $this->source); })()), "user", [], "any", false, false, false, 69), "prenom", [], "any", false, false, false, 69), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 71, $this->source); })()), "user", [], "any", false, false, false, 71), "prenom", [], "any", false, false, false, 71), "html", null, true);
             yield "</span>
      </div>
      <a href =\"";
-            // line 71
+            // line 73
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             yield "\" style=\"white-space: nowrap;\">Se Déconnecter</a>
      ";
         }
-        // line 73
+        // line 75
         yield "     </div>
 </nav>";
         
@@ -168,7 +170,7 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  139 => 73,  134 => 71,  128 => 69,  124 => 67,  118 => 65,  116 => 64,  111 => 61,  106 => 58,  104 => 57,  100 => 55,  97 => 40,  90 => 35,  88 => 34,  85 => 33,  79 => 29,  77 => 28,  48 => 1,);
+        return array (  141 => 75,  136 => 73,  130 => 71,  126 => 69,  120 => 67,  118 => 66,  113 => 63,  108 => 60,  106 => 59,  102 => 57,  99 => 42,  92 => 37,  90 => 36,  87 => 35,  81 => 31,  79 => 30,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -184,6 +186,8 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
     <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
       <ul class=\"navbar-nav mb-2 mb-lg-0 d-flex w-100 justify-content-around\">
 
+       <span class=\"navbar-brand\">Terroir Garonnais</span>
+
         <li class=\"nav-item\">
           <a class=\"nav-link active\" aria-current=\"page\" href=\"/\">Accueil</a>
         </li>
@@ -196,9 +200,9 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
           <a class=\"nav-link active\" aria-current=\"page\" href=\"/propos\">À Propos de Nous</a>
         </li>
 
-        <li class=\"nav-item\">
-        <a class=\"nav-link active\" aria-current=\"page\" href=\"/panier\">Panier</a>
-        </li>
+<li class=\"nav-item\">
+  <a class=\"btn btn-panier\" href=\"/panier\">Panier</a>
+</li>
 
         {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_PROSPECT') or is_granted('ROLE_MARAICHER') %}
         <li class=\"nav-item\">

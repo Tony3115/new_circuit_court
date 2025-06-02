@@ -2,6 +2,8 @@ body {
     background-color: skyblue;
 }
 
+/*navbar*/
+
 .user-info {
     display: flex;
     flex-direction: row; 
@@ -18,4 +20,24 @@ body {
 
 .bi-person-circle {
   font-size: 2rem;
+}
+
+.btn-panier {
+  background-color: orangered;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 50px;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-panier:hover {
+  background-color: #218838;
+}
+
+.navbar-logo {
+  height: 100px;
+  width: auto;
+  margin-right: 10px;
 }
