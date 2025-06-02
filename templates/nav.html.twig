@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="app.css">
+
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
  <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +14,15 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/produit">Produit</a>
+          <a class="nav-link active" aria-current="page" href="/produit">Nos Produits</a>
+        </li>
+
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/propos">À Propos de Nous</a>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/panier">Panier</a>
         </li>
 
         {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_PROSPECT') or is_granted('ROLE_MARAICHER') %}
@@ -44,15 +55,20 @@
       </ul>
 
        {% if not app.user %}
-     <a href="/login">Se connecter</a>
+     <a href="/login" style="white-space: nowrap;">Se connecter</a>
+
      {% else %}
-     <div style="display: flex; flex-direction: column; align-items: stretch;">
-     <i class="bi bi-person-circle"></i>
+     
+     <div class="user-container">
+     <div class="user-info">
+      {% if app.user.image %}
+       <img src="{{ app.user.image }}" alt="User Image" class="profile-image">
+      {% else %}
+      <i class="bi bi-person-circle"></i>
+      {% endif %}
      <span>{{ app.user.prenom }}</span>
+     </div>
      <a href ="{{ path('app_logout')}}" style="white-space: nowrap;">Se Déconnecter</a>
-    
      {% endif %}
-</div>
-    </div>
-  </div>
+     </div>
 </nav>
