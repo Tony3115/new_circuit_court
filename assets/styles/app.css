@@ -36,8 +36,6 @@ body {
   background-color: #218838;
 }
 
-.navbar-logo {
-  height: 100px;
-  width: auto;
-  margin-right: 10px;
+.form-control {
+  width: 300px;
 }

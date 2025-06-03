@@ -15,6 +15,30 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/produit')]
 class ProduitController extends AbstractController
 {
+
+    #[Route('/search', name: 'app_produit_search', methods: ['GET'])]
+    public function search(Request $request, ProduitRepository $produitRepository): Response
+    {
+        $query = $request->query->get('query');
+
+        // Vérifie si un terme de recherche a été fourni
+        if ($query) {
+            $produits = $produitRepository->createQueryBuilder('p')
+                ->where('p.name LIKE :query')
+                ->setParameter('query', '%' . $query . '%')
+                ->getQuery()
+                ->getResult();
+        } else {
+            $produits = [];
+        }
+
+        return $this->render('produit/search.html.twig', [
+            'produits' => $produits,
+            'query' => $query
+        ]);
+    }
+
+
     #[Route('/', name: 'app_produit_index', methods: ['GET'])]
     public function index(ProduitRepository $produitRepository): Response
     {

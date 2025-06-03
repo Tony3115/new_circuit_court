@@ -20,6 +20,7 @@ return [
         '/contact' => [[['_route' => 'app_contact', '_controller' => 'App\\Controller\\HomeController::contact'], null, null, null, false, false, null]],
         '/phpmail' => [[['_route' => 'app_phpmail', '_controller' => 'App\\Controller\\HomeController::phpmail'], null, null, null, false, false, null]],
         '/service' => [[['_route' => 'app_service', '_controller' => 'App\\Controller\\HomeController::service'], null, null, null, false, false, null]],
+        '/produit/search' => [[['_route' => 'app_produit_search', '_controller' => 'App\\Controller\\ProduitController::search'], null, ['GET' => 0], null, false, false, null]],
         '/produit' => [[['_route' => 'app_produit_index', '_controller' => 'App\\Controller\\ProduitController::index'], null, ['GET' => 0], null, true, false, null]],
         '/produit/new' => [[['_route' => 'app_produit_new', '_controller' => 'App\\Controller\\ProduitController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],

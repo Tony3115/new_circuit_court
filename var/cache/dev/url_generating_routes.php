@@ -25,6 +25,7 @@ return [
     'app_contact' => [[], ['_controller' => 'App\\Controller\\HomeController::contact'], [], [['text', '/contact']], [], [], []],
     'app_phpmail' => [[], ['_controller' => 'App\\Controller\\HomeController::phpmail'], [], [['text', '/phpmail']], [], [], []],
     'app_service' => [[], ['_controller' => 'App\\Controller\\HomeController::service'], [], [['text', '/service']], [], [], []],
+    'app_produit_search' => [[], ['_controller' => 'App\\Controller\\ProduitController::search'], [], [['text', '/produit/search']], [], [], []],
     'app_produit_index' => [[], ['_controller' => 'App\\Controller\\ProduitController::index'], [], [['text', '/produit/']], [], [], []],
     'app_produit_new' => [[], ['_controller' => 'App\\Controller\\ProduitController::new'], [], [['text', '/produit/new']], [], [], []],
     'app_produit_show' => [['id'], ['_controller' => 'App\\Controller\\ProduitController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/produit']], [], [], []],
