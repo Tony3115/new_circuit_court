@@ -2,6 +2,7 @@ body {
     background-color: skyblue;
 }
 
+
 /*navbar*/
 
 .user-info {
@@ -44,7 +45,8 @@ body {
 /*Page accueil*/
 
 .img-accueil img{
+   position: absolute;
+   left: 0;
     width: 100%; /* Prend toute la largeur de la fenêtre */
     height: 600px;
-    display: block; /* Supprime les marges inutiles */
 }
