@@ -39,9 +39,9 @@ class UserType extends AbstractType
                 [
                     'required' => false,
                     'mapped' => false,
-                    'label' => "Image Produit",
+                    'label' => "Image User",
                     'attr' => [
-                        'placeholder' => 'Placeholder Image Produit'
+                        'placeholder' => 'Placeholder Image User'
                     ],
                     'constraints' => [
                         new File([

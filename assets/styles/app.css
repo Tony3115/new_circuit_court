@@ -23,7 +23,7 @@ body {
 }
 
 .btn-panier {
-  background-color: orangered;
+  background-color: #FF4500;
   color: white;
   padding: 10px 20px;
   font-weight: bold;
@@ -33,9 +33,18 @@ body {
 }
 
 .btn-panier:hover {
-  background-color: #218838;
+  background-color: #198754;
+  color: white;
 }
 
 .form-control {
   width: 300px;
+}
+
+/*Page accueil*/
+
+.img-accueil img{
+    width: 100%; /* Prend toute la largeur de la fenêtre */
+    height: 600px;
+    display: block; /* Supprime les marges inutiles */
 }

@@ -100,7 +100,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 27
         yield "
-        <div class=\"container\">
+        <div class=\"container-fluid\">
         ";
         // line 29
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
@@ -276,7 +276,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
 </div>
 {% endfor %}
 
-        <div class=\"container\">
+        <div class=\"container-fluid\">
         {% block body %}{% endblock %}
         </div>
     </body>
