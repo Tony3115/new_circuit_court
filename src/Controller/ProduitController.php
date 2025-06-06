@@ -79,6 +79,9 @@ class ProduitController extends AbstractController
                 }
             }
 
+            // **Assigner automatiquement le user**
+            $produit->setUser($this->getUser());
+
             $entityManager->persist($produit);
             $entityManager->flush();
 

@@ -43,6 +43,10 @@ class Produit
     #[ORM\JoinColumn(nullable: false)]
     private ?Category $category = null;
 
+    #[ORM\ManyToOne(inversedBy: 'produits')]
+    #[ORM\JoinColumn(nullable: true)]
+    private ?User $user = null;
+
     #[ORM\PrePersist]
     public function setCreationDate(): void
     {
@@ -134,6 +138,18 @@ class Produit
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }
