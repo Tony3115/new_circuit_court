@@ -13,7 +13,9 @@
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Image</th>
-                <th>actions</th>
+                {% if is_granted('ROLE_MARAICHER') %}
+                    <th>Actions</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -30,10 +32,12 @@
                     <p>Pas d'image disponible</p>
                     {% endif %}
                 </td>
-                <td>
-                    <a href="{{ path('app_produit_show', {'id': produit.id}) }}">show</a>
-                    <a href="{{ path('app_produit_edit', {'id': produit.id}) }}">edit</a>
-                </td>
+                  {% if is_granted('ROLE_MARAICHER') %}
+                    <td>
+                        <a href="{{ path('app_produit_show', {'id': produit.id}) }}" class="btn btn-info btn-sm">Show</a>
+                        <a href="{{ path('app_produit_edit', {'id': produit.id}) }}" class="btn btn-warning btn-sm">Edit</a>
+                    </td>
+                {% endif %}
             </tr>
         {% else %}
             <tr>

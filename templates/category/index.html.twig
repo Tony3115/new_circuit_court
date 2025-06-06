@@ -12,8 +12,6 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Image</th>
-                <th>Date_create</th>
-                <th>Date_edit</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -30,8 +28,6 @@
                     <p>Pas d'image disponible</p>
                     {% endif %}
                 </td>
-                <td>{{ category.dateCreate ? category.dateCreate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ category.dateEdit ? category.dateEdit|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
                     <a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>

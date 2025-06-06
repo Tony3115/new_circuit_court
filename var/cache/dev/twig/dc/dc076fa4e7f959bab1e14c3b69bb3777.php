@@ -106,77 +106,67 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
                 <th>Name</th>
                 <th>Description</th>
                 <th>Image</th>
-                <th>Date_create</th>
-                <th>Date_edit</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 21
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 19, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 22
+            // line 20
             yield "            <tr>
                 <td>";
+            // line 21
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 21), "html", null, true);
+            yield "</td>
+                <td>";
+            // line 22
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 22), "html", null, true);
+            yield "</td>
+                <td>";
             // line 23
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 23), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 24
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 24), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 25
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "description", [], "any", false, false, false, 25), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "description", [], "any", false, false, false, 23), "html", null, true);
             yield "</td>
                   <td>
                     ";
-            // line 27
-            if ((CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", true, true, false, 27) && CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 27))) {
-                // line 28
+            // line 25
+            if ((CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", true, true, false, 25) && CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 25))) {
+                // line 26
                 yield "                    <img width= \"100px\" src= \"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 28, $this->source); })()), "request", [], "any", false, false, false, 28), "getSchemeAndHttpHost", [], "method", false, false, false, 28), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "request", [], "any", false, false, false, 26), "getSchemeAndHttpHost", [], "method", false, false, false, 26), "html", null, true);
                 yield "/";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 28), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 26), "html", null, true);
                 yield "\" alt=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 28), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 26), "html", null, true);
                 yield "\">
                     ";
             } else {
-                // line 30
+                // line 28
                 yield "                    <p>Pas d'image disponible</p>
                     ";
             }
-            // line 32
+            // line 30
             yield "                </td>
-                <td>";
-            // line 33
-            yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["category"], "dateCreate", [], "any", false, false, false, 33)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "dateCreate", [], "any", false, false, false, 33), "Y-m-d H:i:s"), "html", null, true)) : (""));
-            yield "</td>
-                <td>";
-            // line 34
-            yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["category"], "dateEdit", [], "any", false, false, false, 34)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "dateEdit", [], "any", false, false, false, 34), "Y-m-d H:i:s"), "html", null, true)) : (""));
-            yield "</td>
                 <td>
                     <a href=\"";
-            // line 36
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+            // line 32
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 32)]), "html", null, true);
             yield "\">show</a>
                     <a href=\"";
-            // line 37
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+            // line 33
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 33)]), "html", null, true);
             yield "\">edit</a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
-        // line 40
+        // line 36
         if (!$context['_iterated']) {
-            // line 41
+            // line 37
             yield "            <tr>
                 <td colspan=\"7\">no records found</td>
             </tr>
@@ -185,12 +175,12 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['category'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 41
         yield "        </tbody>
     </table>
 
     <a href=\"";
-        // line 48
+        // line 44
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_new");
         yield "\">Create new</a>
 ";
@@ -224,7 +214,7 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  194 => 48,  189 => 45,  180 => 41,  178 => 40,  170 => 37,  166 => 36,  161 => 34,  157 => 33,  154 => 32,  150 => 30,  140 => 28,  138 => 27,  133 => 25,  129 => 24,  125 => 23,  122 => 22,  117 => 21,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  184 => 44,  179 => 41,  170 => 37,  168 => 36,  160 => 33,  156 => 32,  152 => 30,  148 => 28,  138 => 26,  136 => 25,  131 => 23,  127 => 22,  123 => 21,  120 => 20,  115 => 19,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -243,8 +233,6 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
                 <th>Name</th>
                 <th>Description</th>
                 <th>Image</th>
-                <th>Date_create</th>
-                <th>Date_edit</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -261,8 +249,6 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
                     <p>Pas d'image disponible</p>
                     {% endif %}
                 </td>
-                <td>{{ category.dateCreate ? category.dateCreate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ category.dateEdit ? category.dateEdit|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href=\"{{ path('app_category_show', {'id': category.id}) }}\">show</a>
                     <a href=\"{{ path('app_category_edit', {'id': category.id}) }}\">edit</a>
