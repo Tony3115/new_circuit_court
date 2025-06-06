@@ -8,7 +8,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+              {% if is_granted('ROLE_ADMIN') %}
+                    <th>Id</th>
+                {% endif %}
                 <th>Name</th>
                 <th>Description</th>
                 <th>Prix</th>
@@ -21,7 +23,9 @@
         <tbody>
         {% for produit in produits %}
             <tr>
+                {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ produit.id }}</td>
+                {% endif %}
                 <td>{{ produit.name }}</td>
                 <td>{{ produit.description }}</td>
                 <td>{{ produit.prix }}</td>

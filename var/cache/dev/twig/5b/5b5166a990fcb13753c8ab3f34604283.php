@@ -102,90 +102,102 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
     <table class=\"table\">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+              ";
+        // line 11
+        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 12
+            yield "                    <th>Id</th>
+                ";
+        }
+        // line 14
+        yield "                <th>Name</th>
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Image</th>
                 ";
-        // line 16
+        // line 18
         if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MARAICHER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 17
+            // line 19
             yield "                    <th>Actions</th>
                 ";
         }
-        // line 19
+        // line 21
         yield "            </tr>
         </thead>
         <tbody>
         ";
-        // line 22
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 22, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["produits"]) || array_key_exists("produits", $context) ? $context["produits"] : (function () { throw new RuntimeError('Variable "produits" does not exist.', 24, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["produit"]) {
-            // line 23
-            yield "            <tr>
-                <td>";
-            // line 24
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 24), "html", null, true);
-            yield "</td>
-                <td>";
             // line 25
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "name", [], "any", false, false, false, 25), "html", null, true);
-            yield "</td>
-                <td>";
+            yield "            <tr>
+                ";
             // line 26
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 26), "html", null, true);
+            if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+                // line 27
+                yield "                <td>";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 27), "html", null, true);
+                yield "</td>
+                ";
+            }
+            // line 29
+            yield "                <td>";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "name", [], "any", false, false, false, 29), "html", null, true);
             yield "</td>
                 <td>";
-            // line 27
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 27), "html", null, true);
+            // line 30
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 30), "html", null, true);
+            yield "</td>
+                <td>";
+            // line 31
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 31), "html", null, true);
             yield "</td>
                 <td>
                     ";
-            // line 29
-            if ((CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", true, true, false, 29) && CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 29))) {
-                // line 30
+            // line 33
+            if ((CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", true, true, false, 33) && CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 33))) {
+                // line 34
                 yield "                    <img width= \"100 px\" src= \"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "request", [], "any", false, false, false, 30), "getSchemeAndHttpHost", [], "method", false, false, false, 30), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 34, $this->source); })()), "request", [], "any", false, false, false, 34), "getSchemeAndHttpHost", [], "method", false, false, false, 34), "html", null, true);
                 yield "/";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 30), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 34), "html", null, true);
                 yield "\" alt=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "name", [], "any", false, false, false, 30), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "name", [], "any", false, false, false, 34), "html", null, true);
                 yield "\">
                     ";
             } else {
-                // line 32
+                // line 36
                 yield "                    <p>Pas d'image disponible</p>
                     ";
             }
-            // line 34
+            // line 38
             yield "                </td>
                   ";
-            // line 35
+            // line 39
             if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MARAICHER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-                // line 36
+                // line 40
                 yield "                    <td>
                         <a href=\"";
-                // line 37
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 37)]), "html", null, true);
+                // line 41
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 41)]), "html", null, true);
                 yield "\" class=\"btn btn-info btn-sm\">Show</a>
                         <a href=\"";
-                // line 38
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 38)]), "html", null, true);
+                // line 42
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 42)]), "html", null, true);
                 yield "\" class=\"btn btn-warning btn-sm\">Edit</a>
                     </td>
                 ";
             }
-            // line 41
+            // line 45
             yield "            </tr>
         ";
             $context['_iterated'] = true;
         }
-        // line 42
+        // line 46
         if (!$context['_iterated']) {
-            // line 43
+            // line 47
             yield "            <tr>
                 <td colspan=\"8\">no records found</td>
             </tr>
@@ -194,14 +206,14 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['produit'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 51
         yield "        </tbody>
     </table>
 
 ";
-        // line 50
+        // line 54
         if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MARAICHER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 51
+            // line 55
             yield "    <a href=\"";
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_new");
             yield "\" class=\"btn btn-success\">Create new</a>
@@ -237,7 +249,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  205 => 51,  203 => 50,  198 => 47,  189 => 43,  187 => 42,  182 => 41,  176 => 38,  172 => 37,  169 => 36,  167 => 35,  164 => 34,  160 => 32,  150 => 30,  148 => 29,  143 => 27,  139 => 26,  135 => 25,  131 => 24,  128 => 23,  123 => 22,  118 => 19,  114 => 17,  112 => 16,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  217 => 55,  215 => 54,  210 => 51,  201 => 47,  199 => 46,  194 => 45,  188 => 42,  184 => 41,  181 => 40,  179 => 39,  176 => 38,  172 => 36,  162 => 34,  160 => 33,  155 => 31,  151 => 30,  146 => 29,  140 => 27,  138 => 26,  135 => 25,  130 => 24,  125 => 21,  121 => 19,  119 => 18,  113 => 14,  109 => 12,  107 => 11,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -252,7 +264,9 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
     <table class=\"table\">
         <thead>
             <tr>
-                <th>Id</th>
+              {% if is_granted('ROLE_ADMIN') %}
+                    <th>Id</th>
+                {% endif %}
                 <th>Name</th>
                 <th>Description</th>
                 <th>Prix</th>
@@ -265,7 +279,9 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
         <tbody>
         {% for produit in produits %}
             <tr>
+                {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ produit.id }}</td>
+                {% endif %}
                 <td>{{ produit.name }}</td>
                 <td>{{ produit.description }}</td>
                 <td>{{ produit.prix }}</td>
