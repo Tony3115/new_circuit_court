@@ -15,8 +15,6 @@
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>Phone</th>
-                <th>Date_create</th>
-                <th>Date_edit</th>
                 <th>Image</th>
                 <th>actions</th>
             </tr>
@@ -31,8 +29,6 @@
                 <td>{{ user.nom }}</td>
                 <td>{{ user.prenom }}</td>
                 <td>{{ user.phone }}</td>
-                <td>{{ user.dateCreate ? user.dateCreate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ user.dateEdit ? user.dateEdit|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     {% if user.image is defined and user.image %}
                     <img width= "100px" src= "{{ app.request.getSchemeAndHttpHost()}}/{{user.image}}" alt="{{ user.prenom }}">

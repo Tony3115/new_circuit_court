@@ -13,8 +13,6 @@
                 <th>Description</th>
                 <th>Prix</th>
                 <th>Image</th>
-                <th>Date_create</th>
-                <th>Date_edit</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -32,9 +30,6 @@
                     <p>Pas d'image disponible</p>
                     {% endif %}
                 </td>
-
-                <td>{{ produit.dateCreate ? produit.dateCreate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ produit.dateEdit ? produit.dateEdit|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('app_produit_show', {'id': produit.id}) }}">show</a>
                     <a href="{{ path('app_produit_edit', {'id': produit.id}) }}">edit</a>
@@ -48,5 +43,7 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_produit_new') }}">Create new</a>
+{% if is_granted('ROLE_MARAICHER') %}
+    <a href="{{ path('app_produit_new') }}" class="btn btn-success">Create new</a>
+{% endif %}
 {% endblock %}
