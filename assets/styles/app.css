@@ -3,7 +3,15 @@ body {
 }
 
 
+
 /*navbar*/
+
+.nav-link:hover {
+    background-color: #198754; /* Fond légèrement gris */
+    border-radius: 5px; /* Ajoute un effet arrondi */
+  color: white !important ;
+}
+
 
 .user-info {
     display: flex;
@@ -48,5 +56,16 @@ body {
    position: absolute;
    left: 0;
     width: 100%; /* Prend toute la largeur de la fenêtre */
-    height: 600px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+        height: 40px; /* Ajuste la hauteur du footer */
 }

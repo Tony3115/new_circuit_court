@@ -127,8 +127,9 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         // line 11
         yield "
 <div class=\"img-accueil\">
-<img src=\"uploads/accueil.jpeg\" alt=\"image de l'accueil\" width=\"100%\">
+<img src=\"uploads/accueil.jpeg\" alt=\"photo de legume\">
 </div>
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -177,9 +178,13 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
 {% block body %}
 
 <div class=\"img-accueil\">
-<img src=\"uploads/accueil.jpeg\" alt=\"image de l'accueil\" width=\"100%\">
+<img src=\"uploads/accueil.jpeg\" alt=\"photo de legume\">
 </div>
+
 {% endblock %}
+
+
+
 ", "home/index.html.twig", "C:\\laragon\\www\\new_circuit_court\\templates\\home\\index.html.twig");
     }
 }

@@ -116,7 +116,7 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
         // line 67
         if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 67, $this->source); })()), "user", [], "any", false, false, false, 67)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
             // line 68
-            yield "     <a href=\"/login\" style=\"white-space: nowrap;\">Se connecter</a>
+            yield "     <a href=\"/login\" style=\"white-space: nowrap; font-weight: 500; text-decoration: none;\">Se connecter</a>
 
      ";
         } else {
@@ -145,7 +145,7 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
      <a href =\"";
             // line 81
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            yield "\" style=\"white-space: nowrap;\">Se Déconnecter</a>
+            yield "\" style=\"white-space: nowrap; font-weight: 500; text-decoration: none;\">Se Déconnecter</a>
      ";
         }
         // line 83
@@ -253,7 +253,7 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
       </ul>
 
        {% if not app.user %}
-     <a href=\"/login\" style=\"white-space: nowrap;\">Se connecter</a>
+     <a href=\"/login\" style=\"white-space: nowrap; font-weight: 500; text-decoration: none;\">Se connecter</a>
 
      {% else %}
      
@@ -266,7 +266,7 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
       {% endif %}
      <span>{{ app.user.prenom }}</span>
      </div>
-     <a href =\"{{ path('app_logout')}}\" style=\"white-space: nowrap;\">Se Déconnecter</a>
+     <a href =\"{{ path('app_logout')}}\" style=\"white-space: nowrap; font-weight: 500; text-decoration: none;\">Se Déconnecter</a>
      {% endif %}
      </div>
 </nav>", "nav.html.twig", "C:\\laragon\\www\\new_circuit_court\\templates\\nav.html.twig");

@@ -36,6 +36,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
+            'footer' => [$this, 'block_footer'],
         ];
     }
 
@@ -99,13 +100,18 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 27
-        yield "
-        <div class=\"container-fluid\">
+        yield "        <div class=\"container-fluid\">
         ";
-        // line 29
+        // line 28
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 30
+        // line 29
         yield "        </div>
+
+        ";
+        // line 31
+        yield from $this->unwrap()->yieldBlock('footer', $context, $blocks);
+        // line 36
+        yield "
     </body>
 </html>
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO\" crossorigin=\"anonymous\"></script>
@@ -201,7 +207,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         yield from [];
     }
 
-    // line 29
+    // line 28
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -214,6 +220,33 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 31
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_footer(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
+
+        // line 32
+        yield "    <footer class=\"bg-dark text-white text-center py-3 mt-4\">
+        <p>&copy; 2025 Terroir Garonnais. Tous droits réservés.</p>
+    </footer>
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -244,7 +277,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  205 => 29,  191 => 14,  178 => 13,  164 => 10,  151 => 9,  128 => 5,  108 => 30,  106 => 29,  102 => 27,  93 => 24,  90 => 23,  86 => 22,  82 => 20,  80 => 19,  76 => 18,  72 => 16,  70 => 13,  67 => 12,  65 => 9,  58 => 5,  52 => 1,);
+        return array (  246 => 32,  233 => 31,  211 => 28,  197 => 14,  184 => 13,  170 => 10,  157 => 9,  134 => 5,  114 => 36,  112 => 31,  108 => 29,  106 => 28,  103 => 27,  94 => 24,  91 => 23,  87 => 22,  83 => 20,  81 => 19,  77 => 18,  73 => 16,  71 => 13,  68 => 12,  66 => 9,  59 => 5,  53 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -275,10 +308,16 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
 {{message | raw }}
 </div>
 {% endfor %}
-
         <div class=\"container-fluid\">
         {% block body %}{% endblock %}
         </div>
+
+        {% block footer %}
+    <footer class=\"bg-dark text-white text-center py-3 mt-4\">
+        <p>&copy; 2025 Terroir Garonnais. Tous droits réservés.</p>
+    </footer>
+{% endblock %}
+
     </body>
 </html>
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO\" crossorigin=\"anonymous\"></script>

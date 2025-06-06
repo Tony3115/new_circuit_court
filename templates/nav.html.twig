@@ -65,7 +65,7 @@
       </ul>
 
        {% if not app.user %}
-     <a href="/login" style="white-space: nowrap;">Se connecter</a>
+     <a href="/login" style="white-space: nowrap; font-weight: 500; text-decoration: none;">Se connecter</a>
 
      {% else %}
      
@@ -78,7 +78,7 @@
       {% endif %}
      <span>{{ app.user.prenom }}</span>
      </div>
-     <a href ="{{ path('app_logout')}}" style="white-space: nowrap;">Se Déconnecter</a>
+     <a href ="{{ path('app_logout')}}" style="white-space: nowrap; font-weight: 500; text-decoration: none;">Se Déconnecter</a>
      {% endif %}
      </div>
 </nav>
