@@ -44,14 +44,19 @@ class ProduitController extends AbstractController
     {
         $user = $this->getUser();
         // Si l'utilisateur est un maraîcher, récupérer uniquement ses produits
-        if ($this->isGranted('ROLE_MARAICHER')) {
+
+        if ($this->isGranted('ROLE_ADMIN')) {
+            $produits = $produitRepository->findAll();
+        } else if ($this->isGranted('ROLE_MARAICHER')) {
+            // Si l'utilisateur est un administrateur ,afficher tous les produits
             $produits = $produitRepository->findBy(['user' => $user]);
         } else {
-            // Si l'utilisateur est un administrateur ou un autre rôle, afficher tous les produits
             $produits = $produitRepository->findAll();
         }
+
         return $this->render('produit/index.html.twig', [
             'produits' => $produits,
+
         ]);
     }
 
