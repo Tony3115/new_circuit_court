@@ -72,7 +72,8 @@
      <div class="user-container">
      <div class="user-info">
       {% if app.user.image %}
-       <img src="{{ app.user.image }}" alt="User Image" class="profile-image">
+   <img src="{{ app.request.getSchemeAndHttpHost() }}/{{ app.user.image }}" alt="User Image" class="profile-image">
+
       {% else %}
       <i class="bi bi-person-circle"></i>
       {% endif %}

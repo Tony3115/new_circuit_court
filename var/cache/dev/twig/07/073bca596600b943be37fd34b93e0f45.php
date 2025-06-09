@@ -128,27 +128,30 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
             // line 74
             if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 74, $this->source); })()), "user", [], "any", false, false, false, 74), "image", [], "any", false, false, false, 74)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 // line 75
-                yield "       <img src=\"";
+                yield "   <img src=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 75, $this->source); })()), "request", [], "any", false, false, false, 75), "getSchemeAndHttpHost", [], "method", false, false, false, 75), "html", null, true);
+                yield "/";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 75, $this->source); })()), "user", [], "any", false, false, false, 75), "image", [], "any", false, false, false, 75), "html", null, true);
                 yield "\" alt=\"User Image\" class=\"profile-image\">
+
       ";
             } else {
-                // line 77
+                // line 78
                 yield "      <i class=\"bi bi-person-circle\"></i>
       ";
             }
-            // line 79
+            // line 80
             yield "     <span>";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 79, $this->source); })()), "user", [], "any", false, false, false, 79), "prenom", [], "any", false, false, false, 79), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 80, $this->source); })()), "user", [], "any", false, false, false, 80), "prenom", [], "any", false, false, false, 80), "html", null, true);
             yield "</span>
      </div>
      <a href =\"";
-            // line 81
+            // line 82
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             yield "\" style=\"white-space: nowrap; font-weight: 500; text-decoration: none;\">Se Déconnecter</a>
      ";
         }
-        // line 83
+        // line 84
         yield "     </div>
 </nav>";
         
@@ -181,7 +184,7 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  152 => 83,  147 => 81,  141 => 79,  137 => 77,  131 => 75,  129 => 74,  124 => 71,  119 => 68,  117 => 67,  113 => 65,  110 => 50,  103 => 45,  101 => 44,  98 => 43,  92 => 39,  90 => 38,  63 => 14,  48 => 1,);
+        return array (  155 => 84,  150 => 82,  144 => 80,  140 => 78,  131 => 75,  129 => 74,  124 => 71,  119 => 68,  117 => 67,  113 => 65,  110 => 50,  103 => 45,  101 => 44,  98 => 43,  92 => 39,  90 => 38,  63 => 14,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -260,7 +263,8 @@ class __TwigTemplate_eb9cd98b2fec606f722581cf9fe92297 extends Template
      <div class=\"user-container\">
      <div class=\"user-info\">
       {% if app.user.image %}
-       <img src=\"{{ app.user.image }}\" alt=\"User Image\" class=\"profile-image\">
+   <img src=\"{{ app.request.getSchemeAndHttpHost() }}/{{ app.user.image }}\" alt=\"User Image\" class=\"profile-image\">
+
       {% else %}
       <i class=\"bi bi-person-circle\"></i>
       {% endif %}
