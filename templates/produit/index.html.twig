@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Produit index</h1>
 
-    <table class="table">
+    <table class="table text-center table-bordered">
         <thead>
             <tr>
               {% if is_granted('ROLE_ADMIN') %}
@@ -27,10 +27,10 @@
                 {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ produit.id }}</td>
                 {% endif %}
-                <td>{{ produit.name }}</td>
-                <td>{{ produit.description }}</td>
-                <td>{{ produit.prix }}</td>
-                <td>
+                <td style="width: 150px">{{ produit.name }}</td>
+                <td style="width: 300px">{{ produit.description }}</td>
+                <td style="width: 80px">{{ produit.prix }} €</td>
+                <td style="width: 100px">
                     {% if produit.image is defined and produit.image %}
                     <img width= "100 px" src= "{{ app.request.getSchemeAndHttpHost()}}/{{produit.image}}" alt="{{ produit.name }}">
                     {% else %}
@@ -43,7 +43,7 @@
                         <a href="{{ path('app_produit_edit', {'id': produit.id}) }}" class="btn btn-warning btn-sm">Edit</a>
                     </td>
                 {% endif %}
-               <td>{{ produit.user.prenom }}</td>
+               <td style="width: 100px">{{ produit.user.prenom }}</td>
             </tr>
         {% else %}
             <tr>

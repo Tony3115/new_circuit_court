@@ -99,7 +99,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
         // line 6
         yield "    <h1>Produit index</h1>
 
-    <table class=\"table\">
+    <table class=\"table text-center table-bordered\">
         <thead>
             <tr>
               ";
@@ -144,18 +144,18 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
                 ";
             }
             // line 30
-            yield "                <td>";
+            yield "                <td style=\"width: 150px\">";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "name", [], "any", false, false, false, 30), "html", null, true);
             yield "</td>
-                <td>";
+                <td style=\"width: 300px\">";
             // line 31
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "description", [], "any", false, false, false, 31), "html", null, true);
             yield "</td>
-                <td>";
+                <td style=\"width: 80px\">";
             // line 32
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "prix", [], "any", false, false, false, 32), "html", null, true);
-            yield "</td>
-                <td>
+            yield " €</td>
+                <td style=\"width: 100px\">
                     ";
             // line 34
             if ((CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", true, true, false, 34) && CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "image", [], "any", false, false, false, 34))) {
@@ -192,7 +192,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
                 ";
             }
             // line 46
-            yield "               <td>";
+            yield "               <td style=\"width: 100px\">";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "user", [], "any", false, false, false, 46), "prenom", [], "any", false, false, false, 46), "html", null, true);
             yield "</td>
             </tr>
@@ -265,7 +265,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
 {% block body %}
     <h1>Produit index</h1>
 
-    <table class=\"table\">
+    <table class=\"table text-center table-bordered\">
         <thead>
             <tr>
               {% if is_granted('ROLE_ADMIN') %}
@@ -287,10 +287,10 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
                 {% if is_granted('ROLE_ADMIN') %}
                 <td>{{ produit.id }}</td>
                 {% endif %}
-                <td>{{ produit.name }}</td>
-                <td>{{ produit.description }}</td>
-                <td>{{ produit.prix }}</td>
-                <td>
+                <td style=\"width: 150px\">{{ produit.name }}</td>
+                <td style=\"width: 300px\">{{ produit.description }}</td>
+                <td style=\"width: 80px\">{{ produit.prix }} €</td>
+                <td style=\"width: 100px\">
                     {% if produit.image is defined and produit.image %}
                     <img width= \"100 px\" src= \"{{ app.request.getSchemeAndHttpHost()}}/{{produit.image}}\" alt=\"{{ produit.name }}\">
                     {% else %}
@@ -303,7 +303,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
                         <a href=\"{{ path('app_produit_edit', {'id': produit.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
                     </td>
                 {% endif %}
-               <td>{{ produit.user.prenom }}</td>
+               <td style=\"width: 100px\">{{ produit.user.prenom }}</td>
             </tr>
         {% else %}
             <tr>
