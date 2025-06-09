@@ -138,7 +138,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
             // line 27
             if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 // line 28
-                yield "                <td>";
+                yield "                <td style=\"width: 100px\">";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 28), "html", null, true);
                 yield "</td>
                 ";
@@ -179,7 +179,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
             // line 40
             if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MARAICHER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 // line 41
-                yield "                    <td>
+                yield "                    <td style=\"width: 200px\">
                         <a href=\"";
                 // line 42
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 42)]), "html", null, true);
@@ -285,7 +285,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
         {% for produit in produits %}
             <tr>
                 {% if is_granted('ROLE_ADMIN') %}
-                <td>{{ produit.id }}</td>
+                <td style=\"width: 100px\">{{ produit.id }}</td>
                 {% endif %}
                 <td style=\"width: 150px\">{{ produit.name }}</td>
                 <td style=\"width: 300px\">{{ produit.description }}</td>
@@ -298,7 +298,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
                     {% endif %}
                 </td>
                   {% if is_granted('ROLE_MARAICHER') %}
-                    <td>
+                    <td style=\"width: 200px\">
                         <a href=\"{{ path('app_produit_show', {'id': produit.id}) }}\" class=\"btn btn-info btn-sm\">Show</a>
                         <a href=\"{{ path('app_produit_edit', {'id': produit.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
                     </td>

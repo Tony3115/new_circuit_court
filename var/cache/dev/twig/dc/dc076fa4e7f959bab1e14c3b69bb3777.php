@@ -99,7 +99,7 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
         // line 6
         yield "    <h1>Category index</h1>
 
-    <table class=\"table\">
+    <table class=\"table text-center table-bordered\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -118,19 +118,19 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 20
             yield "            <tr>
-                <td>";
+                <td style=\"width: 100px\">";
             // line 21
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 21), "html", null, true);
             yield "</td>
-                <td>";
+                <td style=\"width: 100px\">";
             // line 22
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 22), "html", null, true);
             yield "</td>
-                <td>";
+                <td style=\"width: 300px\">";
             // line 23
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["category"], "description", [], "any", false, false, false, 23), "html", null, true);
             yield "</td>
-                  <td>
+                  <td style=\"width: 100px\">
                     ";
             // line 25
             if ((CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", true, true, false, 25) && CoreExtension::getAttribute($this->env, $this->source, $context["category"], "image", [], "any", false, false, false, 25))) {
@@ -150,15 +150,15 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
             }
             // line 30
             yield "                </td>
-                <td>
+                <td style=\"width: 200px\">
                     <a href=\"";
             // line 32
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 32)]), "html", null, true);
-            yield "\">show</a>
+            yield "\" class=\"btn btn-info btn-sm\">Show</a>
                     <a href=\"";
             // line 33
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 33)]), "html", null, true);
-            yield "\">edit</a>
+            yield "\" class=\"btn btn-warning btn-sm\">Edit</a>
                 </td>
             </tr>
         ";
@@ -226,7 +226,7 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
 {% block body %}
     <h1>Category index</h1>
 
-    <table class=\"table\">
+    <table class=\"table text-center table-bordered\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -239,19 +239,19 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
         <tbody>
         {% for category in categories %}
             <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
-                <td>{{ category.description }}</td>
-                  <td>
+                <td style=\"width: 100px\">{{ category.id }}</td>
+                <td style=\"width: 100px\">{{ category.name }}</td>
+                <td style=\"width: 300px\">{{ category.description }}</td>
+                  <td style=\"width: 100px\">
                     {% if category.image is defined and category.image %}
                     <img width= \"100px\" src= \"{{ app.request.getSchemeAndHttpHost()}}/{{category.image}}\" alt=\"{{ category.name }}\">
                     {% else %}
                     <p>Pas d'image disponible</p>
                     {% endif %}
                 </td>
-                <td>
-                    <a href=\"{{ path('app_category_show', {'id': category.id}) }}\">show</a>
-                    <a href=\"{{ path('app_category_edit', {'id': category.id}) }}\">edit</a>
+                <td style=\"width: 200px\">
+                    <a href=\"{{ path('app_category_show', {'id': category.id}) }}\" class=\"btn btn-info btn-sm\">Show</a>
+                    <a href=\"{{ path('app_category_edit', {'id': category.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
                 </td>
             </tr>
         {% else %}

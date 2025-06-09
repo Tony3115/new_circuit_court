@@ -99,7 +99,7 @@ class __TwigTemplate_f8fa59682f13b2a4545aae1fe58fd59f extends Template
         // line 6
         yield "    <h1>User index</h1>
 
-    <table class=\"table\">
+    <table class=\"table text-center table-bordered\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -169,11 +169,11 @@ class __TwigTemplate_f8fa59682f13b2a4545aae1fe58fd59f extends Template
                     <a href=\"";
             // line 38
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 38)]), "html", null, true);
-            yield "\">show</a>
+            yield "\" class=\"btn btn-info btn-sm\">show</a>
                     <a href=\"";
             // line 39
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 39)]), "html", null, true);
-            yield "\">edit</a>
+            yield "\" class=\"btn btn-warning btn-sm\">edit</a>
                 </td>
             </tr>
         ";
@@ -241,7 +241,7 @@ class __TwigTemplate_f8fa59682f13b2a4545aae1fe58fd59f extends Template
 {% block body %}
     <h1>User index</h1>
 
-    <table class=\"table\">
+    <table class=\"table text-center table-bordered\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -271,8 +271,8 @@ class __TwigTemplate_f8fa59682f13b2a4545aae1fe58fd59f extends Template
                     {% endif %}
                 </td>
                 <td>
-                    <a href=\"{{ path('app_user_show', {'id': user.id}) }}\">show</a>
-                    <a href=\"{{ path('app_user_edit', {'id': user.id}) }}\">edit</a>
+                    <a href=\"{{ path('app_user_show', {'id': user.id}) }}\" class=\"btn btn-info btn-sm\">show</a>
+                    <a href=\"{{ path('app_user_edit', {'id': user.id}) }}\" class=\"btn btn-warning btn-sm\">edit</a>
                 </td>
             </tr>
         {% else %}
