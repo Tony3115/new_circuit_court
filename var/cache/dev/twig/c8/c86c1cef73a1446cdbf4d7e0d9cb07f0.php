@@ -197,7 +197,7 @@ class __TwigTemplate_f8fa59682f13b2a4545aae1fe58fd59f extends Template
     <a href=\"";
         // line 50
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
-        yield "\">Create new</a>
+        yield "\" class=\"btn btn-success\">Create new</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -283,7 +283,7 @@ class __TwigTemplate_f8fa59682f13b2a4545aae1fe58fd59f extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_user_new') }}\">Create new</a>
+    <a href=\"{{ path('app_user_new') }}\" class=\"btn btn-success\">Create new</a>
 {% endblock %}
 ", "user/index.html.twig", "C:\\laragon\\www\\new_circuit_court\\templates\\user\\index.html.twig");
     }

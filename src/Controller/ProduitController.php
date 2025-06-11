@@ -5,12 +5,13 @@ namespace App\Controller;
 use App\Entity\Produit;
 use App\Form\Produit1Type;
 use App\Repository\ProduitRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 #[Route('/produit')]
 class ProduitController extends AbstractController
@@ -40,8 +41,22 @@ class ProduitController extends AbstractController
 
 
     #[Route('/', name: 'app_produit_index', methods: ['GET'])]
-    public function index(ProduitRepository $produitRepository): Response
+    public function index(Request $request, ProduitRepository $produitRepository, CategoryRepository $categoryRepository): Response
     {
+
+        $selectedCategory = $request->query->get('category');
+
+        if ($selectedCategory) {
+            $produits = $produitRepository->findBy(['category' => $selectedCategory]);
+        } else {
+            $produits = $produitRepository->findAll();
+        }
+
+        return $this->render('produit/index.html.twig', [
+            'produits' => $produits,
+            'categories' => $categoryRepository->findAll(),
+        ]);
+
         $user = $this->getUser();
         // Si l'utilisateur est un maraîcher, récupérer uniquement ses produits
 

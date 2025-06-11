@@ -106,6 +106,15 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         // line 29
         yield "        </div>
 
+<footer>
+    <div class=\"container text-center\">
+        <p>&copy; 2025 Nom de l'entreprise. Tous droits réservés.</p>
+        <p><a href=\"/mentions-legales\">Mentions légales</a> | <a href=\"/politique-confidentialite\">Politique de confidentialité</a> | <a href=\"/cookies\">Gestion des cookies</a></p>
+        <p>Contact : <a href=\"mailto:contact@entreprise.com\">terroir-garonnais@gmail.com</a></p>
+    </div>
+</footer>
+
+
     </body>
 </html>
   <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO\" crossorigin=\"anonymous\"></script>
@@ -244,7 +253,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  205 => 28,  191 => 14,  178 => 13,  164 => 10,  151 => 9,  128 => 5,  107 => 29,  105 => 28,  102 => 27,  93 => 24,  90 => 23,  86 => 22,  82 => 20,  80 => 19,  76 => 18,  72 => 16,  70 => 13,  67 => 12,  65 => 9,  58 => 5,  52 => 1,);
+        return array (  214 => 28,  200 => 14,  187 => 13,  173 => 10,  160 => 9,  137 => 5,  107 => 29,  105 => 28,  102 => 27,  93 => 24,  90 => 23,  86 => 22,  82 => 20,  80 => 19,  76 => 18,  72 => 16,  70 => 13,  67 => 12,  65 => 9,  58 => 5,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -278,6 +287,15 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         <div class=\"container-fluid\">
         {% block body %}{% endblock %}
         </div>
+
+<footer>
+    <div class=\"container text-center\">
+        <p>&copy; 2025 Nom de l'entreprise. Tous droits réservés.</p>
+        <p><a href=\"/mentions-legales\">Mentions légales</a> | <a href=\"/politique-confidentialite\">Politique de confidentialité</a> | <a href=\"/cookies\">Gestion des cookies</a></p>
+        <p>Contact : <a href=\"mailto:contact@entreprise.com\">terroir-garonnais@gmail.com</a></p>
+    </div>
+</footer>
+
 
     </body>
 </html>

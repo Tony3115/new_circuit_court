@@ -8,6 +8,11 @@ body {
     padding: 0;
 }
 
+h1 {
+    text-align: center;
+}
+
+
 
 
 /*navbar*/
@@ -77,6 +82,24 @@ body {
 
 .table {
     width: 100%;
+}
+
+/*Footer*/
+
+footer {
+    background-color: #198754;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 

@@ -97,7 +97,7 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Category index</h1>
+        yield "    <h1>Catégorie</h1><br>
 
     <table class=\"table text-center table-bordered\">
         <thead>
@@ -182,7 +182,7 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
     <a href=\"";
         // line 44
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_new");
-        yield "\">Create new</a>
+        yield "\" class=\"btn btn-success\">Create new</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -224,7 +224,7 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
 {% block title %}Category index{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <h1>Catégorie</h1><br>
 
     <table class=\"table text-center table-bordered\">
         <thead>
@@ -262,7 +262,7 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_category_new') }}\">Create new</a>
+    <a href=\"{{ path('app_category_new') }}\" class=\"btn btn-success\">Create new</a>
 {% endblock %}
 ", "category/index.html.twig", "C:\\laragon\\www\\new_circuit_court\\templates\\category\\index.html.twig");
     }

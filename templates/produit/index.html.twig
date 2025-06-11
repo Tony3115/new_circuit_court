@@ -3,7 +3,21 @@
 {% block title %}Produit index{% endblock %}
 
 {% block body %}
-    <h1>Produit index</h1>
+    <h1>Fruits et légumes</h1><br>
+
+    <form method="GET" action="{{ path('app_produit_index') }}" class="mb-3">
+    <label for="categoryFilter">Filtrer par catégorie :</label>
+    <select name="category" id="categoryFilter" class="form-select">
+        <option value="">Toutes les catégories</option>
+        {% for category in categories %}
+            <option value="{{ category.id }}" {% if app.request.query.get('category') == category.id %}selected{% endif %}>
+                {{ category.name }}
+            </option>
+        {% endfor %}
+    </select>
+    <button type="submit" class="btn btn-primary mt-2">Filtrer</button>
+</form>
+
 
     <table class="table text-center table-bordered">
         <thead>
