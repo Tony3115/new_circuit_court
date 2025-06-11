@@ -6,11 +6,37 @@
    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
 {% endblock %}
 
-
 {% block body %}
 
-<div class="img-accueil">
-<img src="uploads/accueil.jpg" alt="photo de legume">
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div class="position-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Produits</a>
+                    </li>
+              <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="categorieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Catégories
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="categorieDropdown">
+        <li><a class="dropdown-item" href="#">Fruits</a></li>
+        <li><a class="dropdown-item" href="#">Légumes</a></li>
+    </ul>
+</li>
+
+            </div>
+        </nav>
+
+        <!-- Contenu principal -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="img-accueil">
+                <img src="uploads/accueil.jpg" alt="photo de légume">
+            </div>
+        </main>
+    </div>
 </div>
 
 {% endblock %}

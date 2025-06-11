@@ -111,7 +111,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         yield from [];
     }
 
-    // line 10
+    // line 9
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -124,10 +124,37 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 11
+        // line 10
         yield "
-<div class=\"img-accueil\">
-<img src=\"uploads/accueil.jpg\" alt=\"photo de legume\">
+<div class=\"container-fluid\">
+    <div class=\"row\">
+        <!-- Sidebar -->
+        <nav class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar\">
+            <div class=\"position-sticky\">
+                <ul class=\"nav flex-column\">
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"#\">Produits</a>
+                    </li>
+              <li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"categorieDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+        Catégories
+    </a>
+    <ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
+        <li><a class=\"dropdown-item\" href=\"#\">Fruits</a></li>
+        <li><a class=\"dropdown-item\" href=\"#\">Légumes</a></li>
+    </ul>
+</li>
+
+            </div>
+        </nav>
+
+        <!-- Contenu principal -->
+        <main class=\"col-md-9 ms-sm-auto col-lg-10 px-md-4\">
+            <div class=\"img-accueil\">
+                <img src=\"uploads/accueil.jpg\" alt=\"photo de légume\">
+            </div>
+        </main>
+    </div>
 </div>
 
 ";
@@ -161,7 +188,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  128 => 11,  115 => 10,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
+        return array (  128 => 10,  115 => 9,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -174,11 +201,37 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
    <link rel=\"stylesheet\" href=\"{{ asset('styles/app.css') }}\">
 {% endblock %}
 
-
 {% block body %}
 
-<div class=\"img-accueil\">
-<img src=\"uploads/accueil.jpg\" alt=\"photo de legume\">
+<div class=\"container-fluid\">
+    <div class=\"row\">
+        <!-- Sidebar -->
+        <nav class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar\">
+            <div class=\"position-sticky\">
+                <ul class=\"nav flex-column\">
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link\" href=\"#\">Produits</a>
+                    </li>
+              <li class=\"nav-item dropdown\">
+    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"categorieDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+        Catégories
+    </a>
+    <ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
+        <li><a class=\"dropdown-item\" href=\"#\">Fruits</a></li>
+        <li><a class=\"dropdown-item\" href=\"#\">Légumes</a></li>
+    </ul>
+</li>
+
+            </div>
+        </nav>
+
+        <!-- Contenu principal -->
+        <main class=\"col-md-9 ms-sm-auto col-lg-10 px-md-4\">
+            <div class=\"img-accueil\">
+                <img src=\"uploads/accueil.jpg\" alt=\"photo de légume\">
+            </div>
+        </main>
+    </div>
 </div>
 
 {% endblock %}
