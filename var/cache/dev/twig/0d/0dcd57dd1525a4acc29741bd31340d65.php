@@ -133,22 +133,29 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
             <div class=\"position-sticky\">
                 <ul class=\"nav flex-column\">
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Produits</a>
+                     <a class=\"nav-link\" href=\"";
+        // line 18
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index");
+        yield "\">Produits</a>
                     </li>
               <li class=\"nav-item dropdown\">
     <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"categorieDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
         Catégories
     </a>
-    <ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
-        <li><a class=\"dropdown-item\" href=\"#\">Fruits</a></li>
-        <li><a class=\"dropdown-item\" href=\"#\">Légumes</a></li>
-    </ul>
+<ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
+    <li><a class=\"dropdown-item\" href=\"";
+        // line 25
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "Fruits"]);
+        yield "\">Fruits</a></li>
+    <li><a class=\"dropdown-item\" href=\"";
+        // line 26
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "Légumes"]);
+        yield "\">Légumes</a></li>
+</ul>
 </li>
-
             </div>
         </nav>
 
-        <!-- Contenu principal -->
         <main class=\"col-md-9 ms-sm-auto col-lg-10 px-md-4\">
             <div class=\"img-accueil\">
                 <img src=\"uploads/accueil.jpg\" alt=\"photo de légume\">
@@ -188,7 +195,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  128 => 10,  115 => 9,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
+        return array (  152 => 26,  148 => 25,  138 => 18,  128 => 10,  115 => 9,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -210,22 +217,20 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
             <div class=\"position-sticky\">
                 <ul class=\"nav flex-column\">
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">Produits</a>
+                     <a class=\"nav-link\" href=\"{{ path('app_produit_index') }}\">Produits</a>
                     </li>
               <li class=\"nav-item dropdown\">
     <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"categorieDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
         Catégories
     </a>
-    <ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
-        <li><a class=\"dropdown-item\" href=\"#\">Fruits</a></li>
-        <li><a class=\"dropdown-item\" href=\"#\">Légumes</a></li>
-    </ul>
+<ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
+    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: 'Fruits' }) }}\">Fruits</a></li>
+    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: 'Légumes' }) }}\">Légumes</a></li>
+</ul>
 </li>
-
             </div>
         </nav>
 
-        <!-- Contenu principal -->
         <main class=\"col-md-9 ms-sm-auto col-lg-10 px-md-4\">
             <div class=\"img-accueil\">
                 <img src=\"uploads/accueil.jpg\" alt=\"photo de légume\">

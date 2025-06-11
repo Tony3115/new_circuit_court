@@ -104,7 +104,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
         // line 28
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
         // line 29
-        yield "        </div>
+        yield "        </div><br>
 
 <footer>
     <div class=\"container text-center\">
@@ -114,10 +114,10 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
     </div>
 </footer>
 
+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO\" crossorigin=\"anonymous\"></script>
 
     </body>
 </html>
-  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO\" crossorigin=\"anonymous\"></script>
 
 
 
@@ -286,7 +286,7 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
 {% endfor %}
         <div class=\"container-fluid\">
         {% block body %}{% endblock %}
-        </div>
+        </div><br>
 
 <footer>
     <div class=\"container text-center\">
@@ -296,10 +296,10 @@ class __TwigTemplate_3273f28cbbe85546c890e1bbd841f00b extends Template
     </div>
 </footer>
 
+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO\" crossorigin=\"anonymous\"></script>
 
     </body>
 </html>
-  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO\" crossorigin=\"anonymous\"></script>
 
 
 
