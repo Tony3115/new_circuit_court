@@ -2,6 +2,12 @@ body {
     background-color: skyblue;
 }
 
+.container-fluid {
+    width: 100vw; /* Prend toute la largeur de l'écran */
+    margin: 0;
+    padding: 0;
+}
+
 
 
 /*navbar*/
@@ -48,6 +54,23 @@ body {
 
 .form-control {
   width: 300px;
+}
+
+/*Page Accueil*/
+
+.img-accueil {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+}
+
+
+.img-accueil img {
+    width: 100%;
+    height: auto;
+    max-height: 600px; 
+    object-fit: cover;
+    display: block;
 }
 
 /*Page Produit*/

@@ -127,7 +127,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         // line 11
         yield "
 <div class=\"img-accueil\">
-<img src=\"uploads/accueil.jpeg\" alt=\"photo de legume\">
+<img src=\"uploads/accueil.jpg\" alt=\"photo de legume\">
 </div>
 
 ";
@@ -178,7 +178,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
 {% block body %}
 
 <div class=\"img-accueil\">
-<img src=\"uploads/accueil.jpeg\" alt=\"photo de legume\">
+<img src=\"uploads/accueil.jpg\" alt=\"photo de legume\">
 </div>
 
 {% endblock %}
