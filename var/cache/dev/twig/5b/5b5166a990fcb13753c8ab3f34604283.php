@@ -219,11 +219,11 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
                         <a href=\"";
                 // line 56
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 56)]), "html", null, true);
-                yield "\" class=\"btn btn-info btn-sm\">Show</a>
+                yield "\" class=\"btn custom-btn\">Show</a>
                         <a href=\"";
                 // line 57
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 57)]), "html", null, true);
-                yield "\" class=\"btn btn-warning btn-sm\">Edit</a>
+                yield "\" class=\"btn btn-primary\">Edit</a>
                     </td>
                 ";
             }
@@ -349,8 +349,8 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
                 </td>
                   {% if is_granted('ROLE_MARAICHER') %}
                     <td style=\"width: 200px\">
-                        <a href=\"{{ path('app_produit_show', {'id': produit.id}) }}\" class=\"btn btn-info btn-sm\">Show</a>
-                        <a href=\"{{ path('app_produit_edit', {'id': produit.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
+                        <a href=\"{{ path('app_produit_show', {'id': produit.id}) }}\" class=\"btn custom-btn\">Show</a>
+                        <a href=\"{{ path('app_produit_edit', {'id': produit.id}) }}\" class=\"btn btn-primary\">Edit</a>
                     </td>
                 {% endif %}
                <td style=\"width: 100px\">{{ produit.user.prenom }}</td>

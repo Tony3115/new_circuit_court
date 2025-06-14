@@ -53,8 +53,8 @@
                 </td>
                   {% if is_granted('ROLE_MARAICHER') %}
                     <td style="width: 200px">
-                        <a href="{{ path('app_produit_show', {'id': produit.id}) }}" class="btn btn-info btn-sm">Show</a>
-                        <a href="{{ path('app_produit_edit', {'id': produit.id}) }}" class="btn btn-warning btn-sm">Edit</a>
+                        <a href="{{ path('app_produit_show', {'id': produit.id}) }}" class="btn custom-btn">Show</a>
+                        <a href="{{ path('app_produit_edit', {'id': produit.id}) }}" class="btn btn-primary">Edit</a>
                     </td>
                 {% endif %}
                <td style="width: 100px">{{ produit.user.prenom }}</td>

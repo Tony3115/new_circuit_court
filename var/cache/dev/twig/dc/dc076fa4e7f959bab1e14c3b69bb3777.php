@@ -154,11 +154,11 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
                     <a href=\"";
             // line 32
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 32)]), "html", null, true);
-            yield "\" class=\"btn btn-info btn-sm\">Show</a>
+            yield "\" class=\"btn custom-btn\">Show</a>
                     <a href=\"";
             // line 33
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 33)]), "html", null, true);
-            yield "\" class=\"btn btn-warning btn-sm\">Edit</a>
+            yield "\" class=\"btn btn-primary\">Edit</a>
                 </td>
             </tr>
         ";
@@ -250,8 +250,8 @@ class __TwigTemplate_7ddfe0d676e89547801275ad64aaa30c extends Template
                     {% endif %}
                 </td>
                 <td style=\"width: 200px\">
-                    <a href=\"{{ path('app_category_show', {'id': category.id}) }}\" class=\"btn btn-info btn-sm\">Show</a>
-                    <a href=\"{{ path('app_category_edit', {'id': category.id}) }}\" class=\"btn btn-warning btn-sm\">Edit</a>
+                    <a href=\"{{ path('app_category_show', {'id': category.id}) }}\" class=\"btn custom-btn\">Show</a>
+                    <a href=\"{{ path('app_category_edit', {'id': category.id}) }}\" class=\"btn btn-primary\">Edit</a>
                 </td>
             </tr>
         {% else %}

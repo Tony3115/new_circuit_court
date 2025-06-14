@@ -30,7 +30,6 @@ class __TwigTemplate_6e2c95fd4471307247022cfae29fef36 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -64,29 +63,6 @@ class __TwigTemplate_6e2c95fd4471307247022cfae29fef36 extends Template
     /**
      * @return iterable<null|scalar|\Stringable>
      */
-    public function block_title(array $context, array $blocks = []): iterable
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        yield "Edit Category";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-        yield from [];
-    }
-
-    // line 5
-    /**
-     * @return iterable<null|scalar|\Stringable>
-     */
     public function block_body(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
@@ -96,23 +72,29 @@ class __TwigTemplate_6e2c95fd4471307247022cfae29fef36 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 4
         yield "    <h1>Edit Category</h1>
 
-    ";
-        // line 8
+    <div class=\"mb-2\">
+        ";
+        // line 7
         yield Twig\Extension\CoreExtension::include($this->env, $context, "category/_form.html.twig", ["button_label" => "Update"]);
         yield "
+    </div>
 
-    <a href=\"";
-        // line 10
+    <div class=\"mb-2\">
+        <a href=\"";
+        // line 11
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_index");
-        yield "\">back to list</a>
+        yield "\" class=\"btn btn-primary\">Back to list</a>
+    </div>
 
-    ";
-        // line 12
+    <div class=\"mb-1\">
+        ";
+        // line 15
         yield Twig\Extension\CoreExtension::include($this->env, $context, "category/_delete_form.html.twig");
         yield "
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -144,24 +126,29 @@ class __TwigTemplate_6e2c95fd4471307247022cfae29fef36 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  114 => 12,  109 => 10,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  95 => 15,  88 => 11,  81 => 7,  76 => 4,  63 => 3,  40 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Edit Category{% endblock %}
-
 {% block body %}
     <h1>Edit Category</h1>
 
-    {{ include('category/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class=\"mb-2\">
+        {{ include('category/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
 
-    <a href=\"{{ path('app_category_index') }}\">back to list</a>
+    <div class=\"mb-2\">
+        <a href=\"{{ path('app_category_index') }}\" class=\"btn btn-primary\">Back to list</a>
+    </div>
 
-    {{ include('category/_delete_form.html.twig') }}
+    <div class=\"mb-1\">
+        {{ include('category/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
+
 ", "category/edit.html.twig", "C:\\laragon\\www\\new_circuit_court\\templates\\category\\edit.html.twig");
     }
 }

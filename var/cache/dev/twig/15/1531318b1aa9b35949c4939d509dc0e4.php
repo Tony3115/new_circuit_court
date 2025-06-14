@@ -99,20 +99,26 @@ class __TwigTemplate_e11735e85bf8e21bcccc88b5eac7cc21 extends Template
         // line 6
         yield "    <h1>Edit User</h1>
 
+<div class=\"mb-2\">
     ";
-        // line 8
+        // line 9
         yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_form.html.twig", ["button_label" => "Update"]);
         yield "
+     </div>
 
+<div class=\"mb-2\">
     <a href=\"";
-        // line 10
+        // line 13
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
-        yield "\">back to list</a>
+        yield "\" class=\"btn btn-primary\">back to list</a>
+     </div>
 
+<div class=\"mb-2\">
     ";
-        // line 12
+        // line 17
         yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_delete_form.html.twig");
         yield "
+     </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -144,7 +150,7 @@ class __TwigTemplate_e11735e85bf8e21bcccc88b5eac7cc21 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  114 => 12,  109 => 10,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  119 => 17,  112 => 13,  105 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -156,11 +162,17 @@ class __TwigTemplate_e11735e85bf8e21bcccc88b5eac7cc21 extends Template
 {% block body %}
     <h1>Edit User</h1>
 
+<div class=\"mb-2\">
     {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+     </div>
 
-    <a href=\"{{ path('app_user_index') }}\">back to list</a>
+<div class=\"mb-2\">
+    <a href=\"{{ path('app_user_index') }}\" class=\"btn btn-primary\">back to list</a>
+     </div>
 
+<div class=\"mb-2\">
     {{ include('user/_delete_form.html.twig') }}
+     </div>
 {% endblock %}
 ", "user/edit.html.twig", "C:\\laragon\\www\\new_circuit_court\\templates\\user\\edit.html.twig");
     }

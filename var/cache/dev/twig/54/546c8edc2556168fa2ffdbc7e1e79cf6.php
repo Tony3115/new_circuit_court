@@ -146,18 +146,22 @@ class __TwigTemplate_e60f9ea7127d400ad87eda4d3a80face extends Template
         </tbody>
     </table>
 
+<div class=\"mb-2\">
     <a href=\"";
-        // line 37
+        // line 38
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_index");
-        yield "\">back to list</a>
+        yield "\" class=\"btn btn-primary\">back to list</a>
+  </div>
 
+<div class=\"mb-2\">
     <a href=\"";
-        // line 39
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 39, $this->source); })()), "id", [], "any", false, false, false, 39)]), "html", null, true);
-        yield "\">edit</a>
-
+        // line 42
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 42, $this->source); })()), "id", [], "any", false, false, false, 42)]), "html", null, true);
+        yield "\" class=\"btn btn-primary\">edit</a>
+  </div>
+  
     ";
-        // line 41
+        // line 45
         yield Twig\Extension\CoreExtension::include($this->env, $context, "category/_delete_form.html.twig");
         yield "
 ";
@@ -191,7 +195,7 @@ class __TwigTemplate_e60f9ea7127d400ad87eda4d3a80face extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  161 => 41,  156 => 39,  151 => 37,  143 => 32,  136 => 28,  129 => 24,  122 => 20,  115 => 16,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  165 => 45,  159 => 42,  152 => 38,  143 => 32,  136 => 28,  129 => 24,  122 => 20,  115 => 16,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -232,10 +236,14 @@ class __TwigTemplate_e60f9ea7127d400ad87eda4d3a80face extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_category_index') }}\">back to list</a>
+<div class=\"mb-2\">
+    <a href=\"{{ path('app_category_index') }}\" class=\"btn btn-primary\">back to list</a>
+  </div>
 
-    <a href=\"{{ path('app_category_edit', {'id': category.id}) }}\">edit</a>
-
+<div class=\"mb-2\">
+    <a href=\"{{ path('app_category_edit', {'id': category.id}) }}\" class=\"btn btn-primary\">edit</a>
+  </div>
+  
     {{ include('category/_delete_form.html.twig') }}
 {% endblock %}
 ", "category/show.html.twig", "C:\\laragon\\www\\new_circuit_court\\templates\\category\\show.html.twig");
