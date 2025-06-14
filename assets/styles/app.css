@@ -17,6 +17,13 @@ h1 {
 
 /*navbar*/
 
+.logo {
+    max-width: 100px; /* Ajustez selon vos besoins */
+    height: auto;
+    cursor: pointer;
+}
+
+
 .nav-link:hover {
     background-color: #198754; /* Fond légèrement gris */
     border-radius: 5px; /* Ajoute un effet arrondi */

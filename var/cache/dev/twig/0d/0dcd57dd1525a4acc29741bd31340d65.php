@@ -145,11 +145,11 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
 <ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
     <li><a class=\"dropdown-item\" href=\"";
         // line 25
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "Fruits"]);
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "2"]);
         yield "\">Fruits</a></li>
     <li><a class=\"dropdown-item\" href=\"";
         // line 26
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "Légumes"]);
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "1"]);
         yield "\">Légumes</a></li>
 </ul>
 </li>
@@ -224,8 +224,8 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         Catégories
     </a>
 <ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
-    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: 'Fruits' }) }}\">Fruits</a></li>
-    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: 'Légumes' }) }}\">Légumes</a></li>
+    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: '2' }) }}\">Fruits</a></li>
+    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: '1' }) }}\">Légumes</a></li>
 </ul>
 </li>
             </div>
