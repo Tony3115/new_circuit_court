@@ -11,23 +11,27 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Sidebar -->
-        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-            <div class="position-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                     <a class="nav-link" href="{{ path('app_produit_index') }}">Produits</a>
-                    </li>
-              <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="categorieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Catégories
-    </a>
-<ul class="dropdown-menu" aria-labelledby="categorieDropdown">
-    <li><a class="dropdown-item" href="{{ path('app_produit_index', { category: '2' }) }}">Fruits</a></li>
-    <li><a class="dropdown-item" href="{{ path('app_produit_index', { category: '1' }) }}">Légumes</a></li>
-</ul>
-</li>
-            </div>
-        </nav>
+  <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar" id="sidebar">
+    <button id="toggleSidebar" class="toggle-btn">◀</button>
+    <div class="position-sticky sidebar-content">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('app_produit_index') }}">Produits</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="categorieDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Catégories
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="categorieDropdown">
+                    <li><a class="dropdown-item" href="{{ path('app_produit_index', { category: '2' }) }}">Fruits</a></li>
+                    <li><a class="dropdown-item" href="{{ path('app_produit_index', { category: '1' }) }}">Légumes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class="img-accueil">
@@ -36,6 +40,19 @@
         </main>
     </div>
 </div>
+
+{% block javascripts %}
+    <script>
+        document.getElementById("toggleSidebar").addEventListener("click", function() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("collapsed");
+
+            // Modifier l'icône du bouton
+            this.innerHTML = sidebar.classList.contains("collapsed") ? "▶" : "◀";
+        });
+    </script>
+{% endblock %}
+
 
 {% endblock %}
 

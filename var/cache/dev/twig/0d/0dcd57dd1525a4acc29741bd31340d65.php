@@ -33,6 +33,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -129,32 +130,36 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
 <div class=\"container-fluid\">
     <div class=\"row\">
         <!-- Sidebar -->
-        <nav class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar\">
-            <div class=\"position-sticky\">
-                <ul class=\"nav flex-column\">
-                    <li class=\"nav-item\">
-                     <a class=\"nav-link\" href=\"";
-        // line 18
+  <nav class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar\" id=\"sidebar\">
+    <button id=\"toggleSidebar\" class=\"toggle-btn\">◀</button>
+    <div class=\"position-sticky sidebar-content\">
+        <ul class=\"nav flex-column\">
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"";
+        // line 19
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index");
         yield "\">Produits</a>
-                    </li>
-              <li class=\"nav-item dropdown\">
-    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"categorieDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-        Catégories
-    </a>
-<ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
-    <li><a class=\"dropdown-item\" href=\"";
-        // line 25
+            </li>
+            <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"categorieDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                    Catégories
+                </a>
+                <ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
+                    <li><a class=\"dropdown-item\" href=\"";
+        // line 26
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "2"]);
         yield "\">Fruits</a></li>
-    <li><a class=\"dropdown-item\" href=\"";
-        // line 26
+                    <li><a class=\"dropdown-item\" href=\"";
+        // line 27
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "1"]);
         yield "\">Légumes</a></li>
-</ul>
-</li>
-            </div>
-        </nav>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
 
         <main class=\"col-md-9 ms-sm-auto col-lg-10 px-md-4\">
             <div class=\"img-accueil\">
@@ -164,6 +169,45 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
     </div>
 </div>
 
+";
+        // line 44
+        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
+        // line 55
+        yield "
+
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 44
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_javascripts(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 45
+        yield "    <script>
+        document.getElementById(\"toggleSidebar\").addEventListener(\"click\", function() {
+            const sidebar = document.getElementById(\"sidebar\");
+            sidebar.classList.toggle(\"collapsed\");
+
+            // Modifier l'icône du bouton
+            this.innerHTML = sidebar.classList.contains(\"collapsed\") ? \"▶\" : \"◀\";
+        });
+    </script>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -195,7 +239,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  152 => 26,  148 => 25,  138 => 18,  128 => 10,  115 => 9,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
+        return array (  202 => 45,  189 => 44,  176 => 55,  174 => 44,  154 => 27,  150 => 26,  140 => 19,  129 => 10,  116 => 9,  102 => 6,  89 => 5,  66 => 3,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -213,23 +257,27 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
 <div class=\"container-fluid\">
     <div class=\"row\">
         <!-- Sidebar -->
-        <nav class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar\">
-            <div class=\"position-sticky\">
-                <ul class=\"nav flex-column\">
-                    <li class=\"nav-item\">
-                     <a class=\"nav-link\" href=\"{{ path('app_produit_index') }}\">Produits</a>
-                    </li>
-              <li class=\"nav-item dropdown\">
-    <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"categorieDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-        Catégories
-    </a>
-<ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
-    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: '2' }) }}\">Fruits</a></li>
-    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: '1' }) }}\">Légumes</a></li>
-</ul>
-</li>
-            </div>
-        </nav>
+  <nav class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar\" id=\"sidebar\">
+    <button id=\"toggleSidebar\" class=\"toggle-btn\">◀</button>
+    <div class=\"position-sticky sidebar-content\">
+        <ul class=\"nav flex-column\">
+            <li class=\"nav-item\">
+                <a class=\"nav-link\" href=\"{{ path('app_produit_index') }}\">Produits</a>
+            </li>
+            <li class=\"nav-item dropdown\">
+                <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"categorieDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                    Catégories
+                </a>
+                <ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
+                    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: '2' }) }}\">Fruits</a></li>
+                    <li><a class=\"dropdown-item\" href=\"{{ path('app_produit_index', { category: '1' }) }}\">Légumes</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
 
         <main class=\"col-md-9 ms-sm-auto col-lg-10 px-md-4\">
             <div class=\"img-accueil\">
@@ -238,6 +286,19 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         </main>
     </div>
 </div>
+
+{% block javascripts %}
+    <script>
+        document.getElementById(\"toggleSidebar\").addEventListener(\"click\", function() {
+            const sidebar = document.getElementById(\"sidebar\");
+            sidebar.classList.toggle(\"collapsed\");
+
+            // Modifier l'icône du bouton
+            this.innerHTML = sidebar.classList.contains(\"collapsed\") ? \"▶\" : \"◀\";
+        });
+    </script>
+{% endblock %}
+
 
 {% endblock %}
 
