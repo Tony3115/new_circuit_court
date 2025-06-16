@@ -120,5 +120,68 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/*Page Catégorie client*/
 
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.category-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.category-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.category-info {
+    margin-top: 10px;
+}
+
+/*Page Produit client*/
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-content: center;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    font-size: 14px;
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+    max-height: 220px; /* Limite la hauteur de l'image */
+    border-radius: 5px;
+}
+
+.product-info {
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.producer {
+    font-style: italic;
+}
 

@@ -6,68 +6,45 @@
     <h1>Fruits et légumes</h1><br>
 
     <form method="GET" action="{{ path('app_produit_index') }}" class="mb-3">
-    <label for="categoryFilter">Filtrer par catégorie :</label>
-    <select name="category" id="categoryFilter" class="form-select">
-        <option value="">Toutes les catégories</option>
-        {% for category in categories %}
-            <option value="{{ category.id }}" {% if app.request.query.get('category') == category.id %}selected{% endif %}>
-                {{ category.name }}
-            </option>
-        {% endfor %}
-    </select>
-    <button type="submit" class="btn btn-primary mt-2">Filtrer</button>
-</form>
+        <label for="categoryFilter">Filtrer par catégorie :</label>
+        <select name="category" id="categoryFilter" class="form-select">
+            <option value="">Toutes les catégories</option>
+            {% for category in categories %}
+                <option value="{{ category.id }}" {% if app.request.query.get('category') == category.id %}selected{% endif %}>
+                    {{ category.name }}
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary mt-2">Filtrer</button>
+    </form>
 
-
-    <table class="table text-center table-bordered">
-        <thead>
-            <tr>
-              {% if is_granted('ROLE_ADMIN') %}
-                    <th>Id</th>
-                {% endif %}
-                <th>Name</th>
-                <th>Description</th>
-                <th>Prix</th>
-                <th>Image</th>
-                {% if is_granted('ROLE_MARAICHER') %}
-                    <th>Actions</th>
-                {% endif %}
-                <th>Producteur</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="products-grid">
         {% for produit in produits %}
-            <tr>
-                {% if is_granted('ROLE_ADMIN') %}
-                <td style="width: 100px">{{ produit.id }}</td>
+            <div class="product-card">
+                {% if produit.image is defined and produit.image %}
+                    <img class="product-img" src="{{ app.request.getSchemeAndHttpHost() }}/{{ produit.image }}" alt="{{ produit.name }}">
+                {% else %}
+                    <p class="text-center">Pas d'image disponible</p>
                 {% endif %}
-                <td style="width: 150px">{{ produit.name }}</td>
-                <td style="width: 300px">{{ produit.description }}</td>
-                <td style="width: 80px">{{ produit.prix }} €</td>
-                <td style="width: 100px">
-                    {% if produit.image is defined and produit.image %}
-                    <img width= "100 px" src= "{{ app.request.getSchemeAndHttpHost()}}/{{produit.image}}" alt="{{ produit.name }}">
-                    {% else %}
-                    <p>Pas d'image disponible</p>
-                    {% endif %}
-                </td>
-                  {% if is_granted('ROLE_MARAICHER') %}
-                    <td style="width: 200px">
+                <div class="product-info">
+                    <h5>{{ produit.name }}</h5>
+                    <p>{{ produit.description }}</p>
+                    <p class="price">{{ produit.prix }} €</p>
+                    <p class="producer">Producteur : {{ produit.user.prenom }}</p>
+                    {% if is_granted('ROLE_MARAICHER') %}
                         <a href="{{ path('app_produit_show', {'id': produit.id}) }}" class="btn custom-btn">Show</a>
                         <a href="{{ path('app_produit_edit', {'id': produit.id}) }}" class="btn btn-primary">Edit</a>
-                    </td>
-                {% endif %}
-               <td style="width: 100px">{{ produit.user.prenom }}</td>
-            </tr>
+                    {% endif %}
+                </div>
+            </div>
         {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
+            <p class="text-center">Aucun produit trouvé.</p>
         {% endfor %}
-        </tbody>
-    </table>
+    </div>
 
-{% if is_granted('ROLE_MARAICHER') %}
-    <a href="{{ path('app_produit_new') }}" class="btn btn-success">Create new</a>
-{% endif %}
+    {% if is_granted('ROLE_MARAICHER') %}
+        <div class="text-center mt-3">
+            <a href="{{ path('app_produit_new') }}" class="btn btn-success">Créer un nouveau produit</a>
+        </div>
+    {% endif %}
 {% endblock %}

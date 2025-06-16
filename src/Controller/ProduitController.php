@@ -44,6 +44,15 @@ class ProduitController extends AbstractController
     public function index(Request $request, ProduitRepository $produitRepository, CategoryRepository $categoryRepository): Response
     {
 
+        if ($this->isGranted('ROLE_ADMIN')) {
+            return $this->redirectToRoute('admin_produit_index');
+        } elseif ($this->isGranted('ROLE_MARAICHER')) {
+            dump('Maraîcher détecté');
+            return $this->redirectToRoute('admin_produit_index');
+        }
+
+        dump('Aucun rôle reconnu');
+
         $selectedCategory = $request->query->get('category');
 
         if ($selectedCategory) {
@@ -55,21 +64,6 @@ class ProduitController extends AbstractController
         return $this->render('produit/index.html.twig', [
             'produits' => $produits,
             'categories' => $categoryRepository->findAll(),
-        ]);
-
-        $user = $this->getUser();
-
-        if ($this->isGranted('ROLE_ADMIN')) {
-            $produits = $produitRepository->findAll();
-        } else if ($this->isGranted('ROLE_MARAICHER')) {
-            $produits = $produitRepository->findBy(['user' => $user]);
-        } else {
-            $produits = $produitRepository->findAll();
-        }
-
-        return $this->render('produit/index.html.twig', [
-            'produits' => $produits,
-
         ]);
     }
 

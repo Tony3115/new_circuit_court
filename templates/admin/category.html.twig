@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Category index{% endblock %}
+
+{% block body %}
+    <h1>Catégorie</h1><br>
+
+    <table class="table text-center table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td style="width: 100px">{{ category.id }}</td>
+                <td style="width: 100px">{{ category.name }}</td>
+                <td style="width: 300px">{{ category.description }}</td>
+                  <td style="width: 100px">
+                    {% if category.image is defined and category.image %}
+                    <img width= "100px" src= "{{ app.request.getSchemeAndHttpHost()}}/{{category.image}}" alt="{{ category.name }}">
+                    {% else %}
+                    <p>Pas d'image disponible</p>
+                    {% endif %}
+                </td>
+                <td style="width: 200px">
+                    <a href="{{ path('app_category_show', {'id': category.id}) }}" class="btn custom-btn">Show</a>
+                    <a href="{{ path('app_category_edit', {'id': category.id}) }}" class="btn btn-primary">Edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_category_new') }}" class="btn btn-success">Create new</a>
+{% endblock %}
