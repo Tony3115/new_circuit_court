@@ -22,6 +22,7 @@ return [
         '/contact' => [[['_route' => 'app_contact', '_controller' => 'App\\Controller\\HomeController::contact'], null, null, null, false, false, null]],
         '/phpmail' => [[['_route' => 'app_phpmail', '_controller' => 'App\\Controller\\HomeController::phpmail'], null, null, null, false, false, null]],
         '/service' => [[['_route' => 'app_service', '_controller' => 'App\\Controller\\HomeController::service'], null, null, null, false, false, null]],
+        '/panier' => [[['_route' => 'app_panier', '_controller' => 'App\\Controller\\PanierController::panier'], null, null, null, false, false, null]],
         '/produit/search' => [[['_route' => 'app_produit_search', '_controller' => 'App\\Controller\\ProduitController::search'], null, ['GET' => 0], null, false, false, null]],
         '/produit' => [[['_route' => 'app_produit_index', '_controller' => 'App\\Controller\\ProduitController::index'], null, ['GET' => 0], null, true, false, null]],
         '/produit/new' => [[['_route' => 'app_produit_new', '_controller' => 'App\\Controller\\ProduitController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
@@ -52,15 +53,21 @@ return [
                     .'|/edit(*:203)'
                     .'|(*:211)'
                 .')'
-                .'|/produit/([^/]++)(?'
-                    .'|(*:240)'
-                    .'|/edit(*:253)'
-                    .'|(*:261)'
+                .'|/p(?'
+                    .'|anier/(?'
+                        .'|add/([^/]++)(*:246)'
+                        .'|remove/([^/]++)(*:269)'
+                    .')'
+                    .'|roduit/([^/]++)(?'
+                        .'|(*:296)'
+                        .'|/edit(*:309)'
+                        .'|(*:317)'
+                    .')'
                 .')'
                 .'|/user/([^/]++)(?'
-                    .'|(*:287)'
-                    .'|/edit(*:300)'
-                    .'|(*:308)'
+                    .'|(*:344)'
+                    .'|/edit(*:357)'
+                    .'|(*:365)'
                 .')'
             .')/?$}sDu',
     ],
@@ -75,12 +82,14 @@ return [
         190 => [[['_route' => 'app_category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         203 => [[['_route' => 'app_category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         211 => [[['_route' => 'app_category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        240 => [[['_route' => 'app_produit_show', '_controller' => 'App\\Controller\\ProduitController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        253 => [[['_route' => 'app_produit_edit', '_controller' => 'App\\Controller\\ProduitController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        261 => [[['_route' => 'app_produit_delete', '_controller' => 'App\\Controller\\ProduitController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        287 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        300 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        308 => [
+        246 => [[['_route' => 'app_panier_add', '_controller' => 'App\\Controller\\PanierController::addToPanier'], ['id'], null, null, false, true, null]],
+        269 => [[['_route' => 'app_panier_remove', '_controller' => 'App\\Controller\\PanierController::removeFromPanier'], ['id'], null, null, false, true, null]],
+        296 => [[['_route' => 'app_produit_show', '_controller' => 'App\\Controller\\ProduitController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        309 => [[['_route' => 'app_produit_edit', '_controller' => 'App\\Controller\\ProduitController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        317 => [[['_route' => 'app_produit_delete', '_controller' => 'App\\Controller\\ProduitController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        344 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        357 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        365 => [
             [['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

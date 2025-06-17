@@ -37,15 +37,14 @@
                         <a href="{{ path('app_produit_edit', {'id': produit.id}) }}" class="btn btn-primary">Edit</a>
                     {% endif %}
 
-<form method="POST" action="{{ path('app_produit_index', {'id': produit.id}) }}">
-    <button type="submit" class="btn btn-success" onclick="showFlashcard(event)">Ajouter au panier</button>
-    <div id="flashcard-{{ produit.id }}" class="flashcard hidden">
-        Produit ajouté au panier !
+    <div class="product-actions">
+    <form method="POST" action="{{ path('app_panier_add', {'id': produit.id}) }}">
+        <button type="submit" class="btn btn-success" onclick="showQuantity(event, {{ produit.id }})">Ajouter au panier</button>
+    </form>
     </div>
-</form>
 
-                </div>
-            </div>
+</div>
+</div>
         {% else %}
             <p class="text-center">Aucun produit trouvé.</p>
         {% endfor %}
@@ -70,6 +69,11 @@
             flashcard.classList.remove('show'); // Cache la flashcard après quelques secondes
         }, 2000);
     }
+
     </script>
 {% endblock %}
+
+
+
+
 

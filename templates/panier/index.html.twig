@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Panier{% endblock %}
+
+{% block body %}
+    <h1>Mon Panier</h1><br>
+
+    {% if produits is empty %}
+        <p>Aucun produit dans le panier.</p>
+    {% else %}
+        <div class="panier-grid">
+            {% for produit in produits %}
+                <div class="panier-item">
+                    <h5>{{ produit.name }}</h5>
+                    <p>{{ produit.description }}</p>
+                    <p class="price">{{ produit.prix }} €</p>
+                    <form method="POST" action="{{ path('app_panier_remove', {'id': produit.id}) }}">
+                        <button type="submit" class="btn btn-danger">Retirer</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+

@@ -207,6 +207,11 @@ footer a:hover {
     display: block;
 }
 
+.product-actions {
+    display: flex;
+    justify-content: center; /* Centre le bouton horizontalement */
+    align-items: center;
+}
 
 /*Filtre category*/
 
