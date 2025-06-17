@@ -32,6 +32,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -194,41 +195,84 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
             }
             // line 39
             yield "
-               <form method=\"POST\" action=\"";
+<form method=\"POST\" action=\"";
             // line 40
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 40)]), "html", null, true);
             yield "\">
-                    <button type=\"submit\" class=\"btn btn-success\">Ajouter au panier</button>
-                </form>
+    <button type=\"submit\" class=\"btn btn-success\" onclick=\"showFlashcard(event)\">Ajouter au panier</button>
+    <div id=\"flashcard-";
+            // line 42
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["produit"], "id", [], "any", false, false, false, 42), "html", null, true);
+            yield "\" class=\"flashcard hidden\">
+        Produit ajouté au panier !
+    </div>
+</form>
+
                 </div>
             </div>
         ";
             $context['_iterated'] = true;
         }
-        // line 45
+        // line 49
         if (!$context['_iterated']) {
-            // line 46
+            // line 50
             yield "            <p class=\"text-center\">Aucun produit trouvé.</p>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['produit'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 48
+        // line 52
         yield "    </div>
 
     ";
-        // line 50
+        // line 54
         if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_MARAICHER")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 51
+            // line 55
             yield "        <div class=\"text-center mt-3\">
             <a href=\"";
-            // line 52
+            // line 56
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_new");
             yield "\" class=\"btn btn-success\">Créer un nouveau produit</a>
         </div>
     ";
         }
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 61
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_javascripts(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 62
+        yield "    <script>
+    function showFlashcard(event) {
+        event.preventDefault(); // Empêche l'envoi immédiat du formulaire
+        let button = event.target;
+        let flashcard = button.nextElementSibling;
+        flashcard.classList.add('show');
+
+        setTimeout(() => {
+            flashcard.classList.remove('show'); // Cache la flashcard après quelques secondes
+        }, 2000);
+    }
+    </script>
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -259,7 +303,7 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  227 => 52,  224 => 51,  222 => 50,  218 => 48,  211 => 46,  209 => 45,  199 => 40,  196 => 39,  191 => 37,  186 => 36,  184 => 35,  180 => 34,  176 => 33,  172 => 32,  168 => 31,  165 => 30,  161 => 28,  151 => 26,  149 => 25,  146 => 24,  141 => 23,  133 => 17,  124 => 14,  115 => 13,  111 => 12,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  263 => 62,  250 => 61,  235 => 56,  232 => 55,  230 => 54,  226 => 52,  219 => 50,  217 => 49,  205 => 42,  200 => 40,  197 => 39,  192 => 37,  187 => 36,  185 => 35,  181 => 34,  177 => 33,  173 => 32,  169 => 31,  166 => 30,  162 => 28,  152 => 26,  150 => 25,  147 => 24,  142 => 23,  134 => 17,  125 => 14,  116 => 13,  112 => 12,  105 => 8,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -303,9 +347,13 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
                         <a href=\"{{ path('app_produit_edit', {'id': produit.id}) }}\" class=\"btn btn-primary\">Edit</a>
                     {% endif %}
 
-               <form method=\"POST\" action=\"{{ path('app_produit_index', {'id': produit.id}) }}\">
-                    <button type=\"submit\" class=\"btn btn-success\">Ajouter au panier</button>
-                </form>
+<form method=\"POST\" action=\"{{ path('app_produit_index', {'id': produit.id}) }}\">
+    <button type=\"submit\" class=\"btn btn-success\" onclick=\"showFlashcard(event)\">Ajouter au panier</button>
+    <div id=\"flashcard-{{ produit.id }}\" class=\"flashcard hidden\">
+        Produit ajouté au panier !
+    </div>
+</form>
+
                 </div>
             </div>
         {% else %}
@@ -319,6 +367,22 @@ class __TwigTemplate_c89972201998dd74df665843f4a32a26 extends Template
         </div>
     {% endif %}
 {% endblock %}
+
+{% block javascripts %}
+    <script>
+    function showFlashcard(event) {
+        event.preventDefault(); // Empêche l'envoi immédiat du formulaire
+        let button = event.target;
+        let flashcard = button.nextElementSibling;
+        flashcard.classList.add('show');
+
+        setTimeout(() => {
+            flashcard.classList.remove('show'); // Cache la flashcard après quelques secondes
+        }, 2000);
+    }
+    </script>
+{% endblock %}
+
 ", "produit/index.html.twig", "C:\\laragon\\www\\new_circuit_court\\templates\\produit\\index.html.twig");
     }
 }

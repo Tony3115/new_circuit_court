@@ -37,9 +37,13 @@
                         <a href="{{ path('app_produit_edit', {'id': produit.id}) }}" class="btn btn-primary">Edit</a>
                     {% endif %}
 
-               <form method="POST" action="{{ path('app_produit_index', {'id': produit.id}) }}">
-                    <button type="submit" class="btn btn-success">Ajouter au panier</button>
-                </form>
+<form method="POST" action="{{ path('app_produit_index', {'id': produit.id}) }}">
+    <button type="submit" class="btn btn-success" onclick="showFlashcard(event)">Ajouter au panier</button>
+    <div id="flashcard-{{ produit.id }}" class="flashcard hidden">
+        Produit ajouté au panier !
+    </div>
+</form>
+
                 </div>
             </div>
         {% else %}
@@ -53,3 +57,19 @@
         </div>
     {% endif %}
 {% endblock %}
+
+{% block javascripts %}
+    <script>
+    function showFlashcard(event) {
+        event.preventDefault(); // Empêche l'envoi immédiat du formulaire
+        let button = event.target;
+        let flashcard = button.nextElementSibling;
+        flashcard.classList.add('show');
+
+        setTimeout(() => {
+            flashcard.classList.remove('show'); // Cache la flashcard après quelques secondes
+        }, 2000);
+    }
+    </script>
+{% endblock %}
+

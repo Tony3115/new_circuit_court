@@ -129,6 +129,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         yield "
 <div class=\"container-fluid\">
     <div class=\"row\">
+    
         <!-- Sidebar -->
   <nav class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar\" id=\"sidebar\">
     <button id=\"toggleSidebar\" class=\"toggle-btn\">◀</button>
@@ -136,7 +137,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         <ul class=\"nav flex-column\">
             <li class=\"nav-item\">
                 <a class=\"nav-link\" href=\"";
-        // line 19
+        // line 20
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index");
         yield "\">Produits</a>
             </li>
@@ -146,11 +147,11 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
                 </a>
                 <ul class=\"dropdown-menu\" aria-labelledby=\"categorieDropdown\">
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 26
+        // line 27
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "2"]);
         yield "\">Fruits</a></li>
                     <li><a class=\"dropdown-item\" href=\"";
-        // line 27
+        // line 28
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_produit_index", ["category" => "1"]);
         yield "\">Légumes</a></li>
                 </ul>
@@ -170,9 +171,9 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
 </div>
 
 ";
-        // line 44
+        // line 45
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 55
+        // line 56
         yield "
 
 ";
@@ -185,7 +186,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         yield from [];
     }
 
-    // line 44
+    // line 45
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -198,7 +199,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 45
+        // line 46
         yield "    <script>
         document.getElementById(\"toggleSidebar\").addEventListener(\"click\", function() {
             const sidebar = document.getElementById(\"sidebar\");
@@ -239,7 +240,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  202 => 45,  189 => 44,  176 => 55,  174 => 44,  154 => 27,  150 => 26,  140 => 19,  129 => 10,  116 => 9,  102 => 6,  89 => 5,  66 => 3,  43 => 1,);
+        return array (  203 => 46,  190 => 45,  177 => 56,  175 => 45,  155 => 28,  151 => 27,  141 => 20,  129 => 10,  116 => 9,  102 => 6,  89 => 5,  66 => 3,  43 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -256,6 +257,7 @@ class __TwigTemplate_487e120353620f9a9c5c7ce327fff467 extends Template
 
 <div class=\"container-fluid\">
     <div class=\"row\">
+    
         <!-- Sidebar -->
   <nav class=\"col-md-3 col-lg-2 d-md-block bg-light sidebar\" id=\"sidebar\">
     <button id=\"toggleSidebar\" class=\"toggle-btn\">◀</button>

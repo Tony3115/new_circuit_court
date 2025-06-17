@@ -192,6 +192,22 @@ footer a:hover {
     font-style: italic;
 }
 
+.flashcard {
+    background-color: #198754;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+    display: none; /* Caché par défaut */
+    color: white;
+}
+
+.flashcard.show {
+    display: block;
+}
+
+
 /*Filtre category*/
 
 #categoryFilter {
